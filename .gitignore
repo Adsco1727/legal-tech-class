@@ -14,6 +14,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+__pycache__/
+*.pyc
+docassemble-dpolawstack/
 
 npm-debug.log*
 yarn-debug.log*
