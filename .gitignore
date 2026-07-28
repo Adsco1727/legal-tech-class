@@ -21,6 +21,7 @@ dpo-ledger-tools/
 dpo-interview-suite/
 dpo-admin-tools/
 dpo-casework/
+dpo-automation-suite/
 
 npm-debug.log*
 yarn-debug.log*

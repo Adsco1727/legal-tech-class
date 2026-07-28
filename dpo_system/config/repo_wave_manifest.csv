@@ -6,5 +6,5 @@ dpo-ledger-tools,https://github.com/Adsco1727/dpo-ledger-tools.git,main,no,yes,5
 dpo-interview-suite,https://github.com/Adsco1727/dpo-interview-suite.git,main,no,yes,5,,custom,dpo_interview_suite/,3,domain package repo; thin Wave 5 interview orchestration scaffold now exists and remains installation-gated
 dpo-admin-tools,https://github.com/Adsco1727/dpo-admin-tools.git,main,no,yes,5,,custom,dpo_admin_tools/,3,domain package repo; thin Wave 5 admin orchestration scaffold now exists and remains installation-gated
 dpo-casework,https://github.com/Adsco1727/dpo-casework.git,main,no,yes,6,,custom,dpo_casework/,3,application repo; thin Wave 6 casework scaffold now exists and remains installation-gated
-dpo-automation-suite,https://github.com/Adsco1727/dpo-automation-suite.git,main,no,yes,6,,custom,,3,application repo; public slug confirmed reachable but installation remains gated
+dpo-automation-suite,https://github.com/Adsco1727/dpo-automation-suite.git,main,no,yes,6,,custom,dpo_automation_suite/,3,application repo; thin Wave 6 automation scaffold now exists and remains installation-gated
 dpo-integrations,https://github.com/Adsco1727/dpo-integrations.git,main,no,yes,6,,custom,,3,application repo; public slug confirmed reachable but installation remains gated
