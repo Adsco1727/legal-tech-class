@@ -1,0 +1,20 @@
+schema:
+  name: jurisdictions
+  version: 1
+  required:
+    - jurisdiction_code
+    - tax_model
+    - active
+  properties:
+    jurisdiction_code:
+      type: string
+      enum: [US, CA, EU, LATAM]
+    tax_model:
+      type: string
+    active:
+      type: boolean
+constraints:
+  unique_keys:
+    - jurisdiction_code
+relationships:
+  jurisdiction_to_tax_model_required: true

@@ -1,0 +1,30 @@
+schema:
+  name: accounting_events
+  version: 1
+  required:
+    - event_id
+    - transaction_id
+    - event_type
+    - debit_account
+    - credit_account
+    - amount
+  properties:
+    event_id:
+      type: string
+      min_length: 8
+    transaction_id:
+      type: string
+    event_type:
+      type: string
+      enum: [accrual, cash, reversal, adjustment]
+    debit_account:
+      type: string
+    credit_account:
+      type: string
+    amount:
+      type: number
+constraints:
+  unique_keys:
+    - event_id
+relationships:
+  accounting_event_to_transaction_required: true

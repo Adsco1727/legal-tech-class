@@ -1,4 +1,5 @@
 # Legal Tech Class
+
 The aim of this project is to create a collaboratively built textbook for teaching law school classes about legal technology.
 
 [Quinten Steenhuis](https://nonprofittechy.com) is the author and editor of almost all of the content as of 2020, so the material
@@ -8,7 +9,7 @@ on [this Trello board](https://trello.com/b/Fz9PIm2g/project-materials).
 
 All content is released under a Creative Commons [Non-commercial Attribution/Share-alike license](https://creativecommons.org/licenses/by-nc-sa/2.0/).
 
-The website itself is a series of Markdown files presented via [Docusaurus](https://v2.docusaurus.io/). 
+The website itself is a series of Markdown files presented via [Docusaurus](https://v2.docusaurus.io/).
 
 It now includes:
 
@@ -21,6 +22,7 @@ It now includes:
 * Syllabi that can help professors create their own legal tech classes
 
 The goal is to also cover related systems, including:
+
 * QnA Markup
 * A2J Author
 * Hotdocs

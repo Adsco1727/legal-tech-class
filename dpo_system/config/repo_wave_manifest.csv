@@ -1,0 +1,10 @@
+repo_name,repo_url,branch,install_enabled,github_enabled,wave,repo_slug,ingestion_type,source_path,priority,notes
+dpo_system,https://github.com/Adsco1727/dpo_system.git,main,no,yes,4,,custom,dpo_system/,2,core infrastructure control-plane repo; public slug confirmed reachable
+legal-tech-class,https://github.com/Adsco1727/legal-tech-class.git,main,yes,yes,4,,custom,docs/,2,front door and documentation layer; public slug confirmed reachable
+docassemble-dpolawstack,https://github.com/Adsco1727/docassemble-dpolawstack.git,main,yes,yes,4,,custom,docassemble/dpolawstack/,2,frontdoor package repo; public slug confirmed reachable
+dpo-ledger-tools,https://github.com/Adsco1727/dpo-ledger-tools.git,main,no,yes,5,,custom,,3,domain package repo; public slug confirmed reachable but installation remains gated
+dpo-interview-suite,https://github.com/Adsco1727/dpo-interview-suite.git,main,no,yes,5,,custom,,3,domain package repo; public slug confirmed reachable but installation remains gated
+dpo-admin-tools,https://github.com/Adsco1727/dpo-admin-tools.git,main,no,yes,5,,custom,,3,domain package repo; public slug confirmed reachable but installation remains gated
+dpo-casework,https://github.com/Adsco1727/dpo-casework.git,main,no,yes,6,,custom,,3,application repo; public slug confirmed reachable but installation remains gated
+dpo-automation-suite,https://github.com/Adsco1727/dpo-automation-suite.git,main,no,yes,6,,custom,,3,application repo; public slug confirmed reachable but installation remains gated
+dpo-integrations,https://github.com/Adsco1727/dpo-integrations.git,main,no,yes,6,,custom,,3,application repo; public slug confirmed reachable but installation remains gated

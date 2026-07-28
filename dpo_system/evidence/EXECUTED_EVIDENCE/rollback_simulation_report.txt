@@ -1,0 +1,48 @@
+ROLLBACK SIMULATION REPORT
+Timestamp(UTC): 2026-07-21T11:29:55Z
+Branch: main
+Commit: 566ef62c
+Scope: Governance state-model rollback and compensation drill
+Execution mode: Simulation (no state mutation)
+
+Overall Result: PASS (5/5 scenarios passed)
+
+Scenario Results:
+- S1 Direct rollback blocked
+  Input: executed -> ready_for_review
+  Expected: FAIL (requires compensation path)
+  Actual: FAIL
+  Outcome: PASS
+  Notes: Direct rollback from executed is prohibited by state model.
+
+- S2 Compensation path allowed
+  Input: executed -> archived
+  Expected: PASS
+  Actual: PASS
+  Outcome: PASS
+  Notes: Compensating closeout transition is legal.
+
+- S3 Archived immutable
+  Input: archived -> approved
+  Expected: FAIL
+  Actual: FAIL
+  Outcome: PASS
+  Notes: Archived records are immutable.
+
+- S4 Invalid fast-path blocked
+  Input: new -> executed
+  Expected: FAIL
+  Actual: FAIL
+  Outcome: PASS
+  Notes: Execution requires approval path.
+
+- S5 Rework path allowed
+  Input: escalated -> ready_for_review
+  Expected: PASS
+  Actual: PASS
+  Outcome: PASS
+  Notes: Escalation can return to review queue.
+
+Decision Guidance:
+- If overall FAIL: Gate 6 remains NO-GO until state model and compensation controls are corrected.
+- If overall PASS: rollback policy is structurally consistent for declared transitions; continue with operational drill against implemented actions when modules are live.

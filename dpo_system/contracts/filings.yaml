@@ -1,0 +1,24 @@
+schema:
+  name: filings
+  version: 1
+  required:
+    - filing_id
+    - filing_type
+    - jurisdiction
+    - source_url
+  properties:
+    filing_id:
+      type: string
+      min_length: 6
+    filing_type:
+      type: string
+      enum: [RegD, RegA, S-1, F-1, 1-A, no_action]
+    jurisdiction:
+      type: string
+    source_url:
+      type: string
+constraints:
+  unique_keys:
+    - filing_id
+relationships:
+  filing_to_jurisdiction_required: true

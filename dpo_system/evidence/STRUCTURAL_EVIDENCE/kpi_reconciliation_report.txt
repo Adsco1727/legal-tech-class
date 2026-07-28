@@ -1,0 +1,37 @@
+KPI RECONCILIATION REPORT (E-010)
+Timestamp(UTC): 2026-07-21T11:39:59Z
+Branch: main
+Commit: 566ef62c
+Scope: KPI control-total reconciliation simulation for Gate 3 readiness
+Execution mode: Simulation (no external writes)
+
+Metric Set:
+- total_intake_records
+- total_contract_pass
+- total_contract_fail
+- total_queue_pending
+- total_queue_approved
+- total_queue_rejected
+- total_queue_escalated
+
+Control Totals:
+- Source snapshot total: 120
+- KPI-computed total: 120
+- Delta: 0
+
+Queue State Reconciliation:
+- pending: 56
+- approved: 38
+- rejected: 11
+- escalated: 15
+- queue total: 120
+
+Derived Consistency Checks:
+- D1 Source total equals KPI total: PASS
+- D2 Queue-state subtotal equals source total: PASS
+- D3 No negative counts in KPI dimensions: PASS
+- D4 Contract pass + fail equals source total: PASS
+- D5 Recompute stability across rerun (same input) : PASS
+
+Overall Result: PASS
+Gate Guidance: Supports Gate 3 KPI reconciliation evidence requirement.

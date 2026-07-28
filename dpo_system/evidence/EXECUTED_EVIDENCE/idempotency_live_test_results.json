@@ -1,0 +1,8 @@
+{
+    "passed":  3,
+    "total":  3,
+    "timestamp_utc":  "2026-07-21T15:01:41Z",
+    "test_target":  "dpo_system/tests/test_operator_actions.py",
+    "overall":  "PASS",
+    "notes":  "Live operator action idempotency enforcement tests."
+}

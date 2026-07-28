@@ -1,0 +1,45 @@
+version: 1
+name: approval_contract
+
+description: Audit trail record for HITL decisions.
+
+required_fields:
+  - decision_id
+  - transaction_id
+  - reviewer
+  - decision
+  - reason_code
+  - evidence_reviewed
+  - decided_at
+
+field_spec:
+  decision_id:
+    type: string
+  transaction_id:
+    type: string
+  reviewer:
+    type: string
+  decision:
+    type: string
+    enum: [approve, reject, escalate, override]
+  reason_code:
+    type: string
+  evidence_reviewed:
+    type: array
+    items: string
+  notes:
+    type: string
+    nullable: true
+  decided_at:
+    type: string
+    format: date-time
+  policy_rule_id:
+    type: string
+    nullable: true
+  override_justification:
+    type: string
+    nullable: true
+
+invariants:
+  - decision override requires override_justification
+  - decision approve requires policy_rule_id

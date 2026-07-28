@@ -1,0 +1,27 @@
+schema:
+  name: leads
+  version: 1
+  required:
+    - lead_id
+    - source
+    - jurisdiction
+    - created_at
+  properties:
+    lead_id:
+      type: string
+      min_length: 8
+    source:
+      type: string
+      enum: [seo, scraper, referral, campaign]
+    jurisdiction:
+      type: string
+    email:
+      type: string
+      nullable: true
+    created_at:
+      type: string
+constraints:
+  unique_keys:
+    - lead_id
+relationships:
+  lead_to_transaction_optional: true

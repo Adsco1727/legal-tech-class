@@ -6,7 +6,11 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "deploy": "docusaurus deploy",
+    "da:up": "docker start docassemble",
+    "da:down": "docker stop docassemble",
+    "da:logs": "docker logs -f docassemble",
+    "da:status": "docker ps -a --filter \"name=^/docassemble$\""
   },
   "dependencies": {
     "@docusaurus/core": "^3.1.0",

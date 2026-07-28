@@ -1,0 +1,78 @@
+version: 1
+name: transaction_contract
+
+description: Canonical transaction record for ingestion, review, approval, and execution.
+
+required_fields:
+  - transaction_id
+  - run_id
+  - wave_id
+  - source_system
+  - jurisdiction
+  - entity_key
+  - event_type
+  - risk_class
+  - queue_state
+  - proposed_action
+  - created_at
+  - checksum
+
+field_spec:
+  transaction_id:
+    type: string
+    pattern: '^[a-zA-Z0-9_-]{8,128}$'
+    description: Deterministic idempotency key.
+  run_id:
+    type: string
+    pattern: '^[a-zA-Z0-9_-]{8,128}$'
+  wave_id:
+    type: integer
+    min: 1
+  source_system:
+    type: string
+    enum: [scraper, parser, integration, manual]
+  jurisdiction:
+    type: string
+  entity_key:
+    type: string
+  event_type:
+    type: string
+  risk_class:
+    type: string
+    enum: [auto, review_required, escalate, blocked]
+  queue_state:
+    type: string
+    enum: [new, ready_for_review, approved, rejected, escalated, executed, archived]
+  proposed_action:
+    type: string
+  approval_required:
+    type: boolean
+    default: true
+  amount:
+    type: number
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  evidence_refs:
+    type: array
+    items: string
+  policy_rule_id:
+    type: string
+    nullable: true
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+    nullable: true
+  checksum:
+    type: string
+    description: Hash of canonical payload for tamper detection.
+
+invariants:
+  - queue_state executed requires approved_at and executed_at
+  - queue_state approved requires approved_by and approved_at
+  - queue_state rejected requires rejection_reason
+  - risk_class blocked must not transition directly to executed

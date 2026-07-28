@@ -1,0 +1,8 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Gary\Documents\GitHub\legal-tech-class
+collected 3 items
+
+dpo_system\tests\test_operator_actions.py ...                            [100%]
+
+============================== 3 passed in 0.05s ==============================

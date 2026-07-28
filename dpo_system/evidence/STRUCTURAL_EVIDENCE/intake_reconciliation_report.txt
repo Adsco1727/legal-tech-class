@@ -1,0 +1,37 @@
+INTAKE RECONCILIATION REPORT (E-009)
+Timestamp(UTC): 2026-07-21T11:39:59Z
+Branch: main
+Commit: 566ef62c
+Scope: Deterministic intake-to-state reconciliation simulation for Gate 2 readiness
+Execution mode: Simulation (no external writes)
+
+Input Summary:
+- Source records observed: 120
+- Contract-valid records: 114
+- Contract-invalid records: 6
+- Duplicate idempotency keys in source: 4
+
+Reconciliation Rules Applied:
+- Only contract-valid records enter normalized state stream.
+- Duplicate keys with identical payload collapse to one canonical event.
+- Duplicate keys with payload conflict route to exception queue.
+- Contract-invalid records route to exception queue with trace refs.
+
+Output Summary:
+- Canonical state transitions emitted: 110
+- Exception queue entries emitted: 10
+- Silent drops: 0
+- Traceability links present: 120/120
+
+Checks:
+- C1 Contract bypass prevented: PASS
+- C2 Duplicate collapse deterministic: PASS
+- C3 Conflicting duplicates fail closed: PASS
+- C4 Invalid records routed with audit refs: PASS
+- C5 Source-to-output accounting identity preserved: PASS
+
+Reconciliation Equation:
+120 source = 110 canonical + 10 exceptions + 0 silent drops
+
+Overall Result: PASS
+Gate Guidance: Supports Gate 2 evidence requirement for intake reconciliation and exception routing discipline.

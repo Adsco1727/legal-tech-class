@@ -1,0 +1,1261 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run-smoke-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe smoke_check.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "clean-shell-sanity",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"echo CLEAN_SHELL_OK && cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class && where git && where python && git --version && c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe --version"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-wire-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && echo REPO_DIR_OK && where gh && gh --version && gh auth status && echo ---REMOTES--- && git remote -v && echo ---BRANCH--- && git branch --show-current"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-wire-check-abs",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && echo REPO_DIR_OK && \"C:\\Program Files\\GitHub CLI\\gh.exe\" --version && \"C:\\Program Files\\GitHub CLI\\gh.exe\" auth status && echo ---REMOTES--- && git remote -v && echo ---BRANCH--- && git branch --show-current"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-wire-check-abs2",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && set \"GH=%ProgramFiles%\\GitHub CLI\\gh.exe\" && echo REPO_DIR_OK && \"%GH%\" --version && \"%GH%\" auth status && echo ---REMOTES--- && git remote -v && echo ---BRANCH--- && git branch --show-current"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-wire-check-ps",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Set-Location 'c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack'; Write-Output 'REPO_DIR_OK'; & 'C:\\Program Files\\GitHub CLI\\gh.exe' --version; & 'C:\\Program Files\\GitHub CLI\\gh.exe' auth status; Write-Output '---REMOTES---'; git remote -v; Write-Output '---BRANCH---'; git branch --show-current"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "find-gh-shortpath",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"dir /x \"C:\\Program Files\" | findstr /I \"GitHub\" && dir /x \"C:\\Program Files\\GitHub CLI\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-exists-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && echo CHECK_SuffolkLITLab && git ls-remote https://github.com/SuffolkLITLab/docassemble-dpolawstack.git HEAD && echo CHECK_Adsco1727 && git ls-remote https://github.com/Adsco1727/docassemble-dpolawstack.git HEAD"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-exists-check-adsco",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack & echo CHECK_Adsco1727 & git ls-remote https://github.com/Adsco1727/docassemble-dpolawstack.git HEAD"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-shortpath-probe",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"if exist C:\\PROGRA~1\\GITHUB~1\\gh.exe (echo GH_SHORTPATH_OK & C:\\PROGRA~1\\GITHUB~1\\gh.exe --version) else (echo GH_SHORTPATH_MISSING)"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-auth-status-shortpath",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"C:\\PROGRA~1\\GITHUB~1\\gh.exe auth status"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-auth-login-web",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"C:\\PROGRA~1\\GITHUB~1\\gh.exe auth login --hostname github.com --git-protocol https --web"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-auth-login-piped",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"(echo y&echo.&echo.) | C:\\PROGRA~1\\GITHUB~1\\gh.exe auth login --hostname github.com --git-protocol https --web"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-clean-pass-wire",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && set GH=C:\\PROGRA~1\\GITHUB~1\\gh.exe && echo [1] AUTH STATUS && %GH% auth status && echo [2] CREATE REPO && %GH% repo create docassemble-dpolawstack --public --source . --remote origin --push && echo [3] REMOTES && git remote -v && echo [4] REPO URL && %GH% repo view docassemble-dpolawstack --json nameWithOwner,url,visibility"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-clean-pass-wire-2",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && echo [1] AUTH STATUS && C:\\PROGRA~1\\GITHUB~1\\gh.exe auth status && echo [2] CREATE REPO && C:\\PROGRA~1\\GITHUB~1\\gh.exe repo create docassemble-dpolawstack --public --source . --remote origin --push && echo [3] REMOTES && git remote -v && echo [4] REPO URL && C:\\PROGRA~1\\GITHUB~1\\gh.exe repo view docassemble-dpolawstack --json nameWithOwner,url,visibility"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "gh-clean-pass-wire-3",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && echo [2] CREATE REPO (NO PUSH) && C:\\PROGRA~1\\GITHUB~1\\gh.exe repo create docassemble-dpolawstack --public || echo REPO_CREATE_MAY_ALREADY_EXIST && echo [3] SET ORIGIN && git remote remove origin 2>nul & git remote add origin https://github.com/Adsco1727/docassemble-dpolawstack.git && echo [4] REMOTES && git remote -v && echo [5] REPO URL && C:\\PROGRA~1\\GITHUB~1\\gh.exe repo view Adsco1727/docassemble-dpolawstack --json nameWithOwner,url,visibility"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-status-clean",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && git status --short && echo ---BRANCH--- && git branch --show-current && echo ---REMOTE--- && git remote -v"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-log-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && git log --oneline --decorate -1 && echo ---FILES--- && git ls-files | find /c /v \"\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-untracked-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && git status --short -uall"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "repo-dir-list",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && dir"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "initial-commit-push",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && git commit --allow-empty -m \"Initial commit\" && git branch -M main && git push -u origin main && git branch --show-current && git remote -v"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "initial-commit-push-ps",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Set-Location 'c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack'; git commit --allow-empty -m 'Initial commit'; git branch -M main; git push -u origin main; git branch --show-current; git remote -v"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-init-ps1",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"C:\\Users\\Gary\\AppData\\Local\\Temp\\docassemble-dpolawstack-init.ps1"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "remove-docassemble-duplicate",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker stop legal-tech-class-docassemble && docker rm legal-tech-class-docassemble && docker ps -a --filter \"name=docassemble\" --format \"table {{.Names}}\\t{{.Status}}\\t{{.Ports}}\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "remove-docassemble-duplicate-force",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker rm -f legal-tech-class-docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-docassemble-single",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker ps -a --filter name=docassemble --format \"table {{.Names}}\\t{{.Status}}\\t{{.Ports}}\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-docassemble-single-ps",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"docker ps -a --filter name=docassemble --format 'table {{.Names}}`t{{.Status}}`t{{.Ports}}'"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "list-containers-bare",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker ps -a"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp1-container-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker ps -a"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp2-http-check",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$r = Invoke-WebRequest -Uri 'http://localhost' -UseBasicParsing -TimeoutSec 10; Write-Output ('HTTP_STATUS=' + $r.StatusCode)"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp3-smoke-package-root",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"cd /d c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack && c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe smoke_check.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp4-keeper-logs",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker logs --tail 120 docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp2-http-check-cmd",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp6-cp7-cp9-checks",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble python3 -c \"import importlib.util; print('PKG_PRESENT=' + str(importlib.util.find_spec('docassemble.dpolawstack') is not None))\" && curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor && echo. && docker ps -a && curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp6-package-in-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble pip show docassemble.dpolawstack"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp9-final-acceptance-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker ps -a && curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-check-slash",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step5-port-reality",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"PORT80=%{http_code}\" http://localhost & echo. & curl -s -o NUL -w \"PORT9080=%{http_code}\" http://localhost:9080 & echo. & docker ps -a"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-install-package-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble pip install --no-cache-dir --upgrade git+https://github.com/Adsco1727/docassemble-dpolawstack.git"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-verify-package-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble pip show docassemble.dpolawstack"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-find-docassemble-pip",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble sh -lc \"ls -la /usr/share/docassemble; which python3; which pip; find /usr/share/docassemble -maxdepth 3 -type f -name pip | head -n 20\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-find-docassemble-pip-ps",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"docker exec docassemble sh -lc 'ls -la /usr/share/docassemble; which python3; which pip; find /usr/share/docassemble -maxdepth 3 -type f -name pip'"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-list-docassemble-dir",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble ls -la /usr/share/docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-python-path",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble python3 -c \"import sys; print(sys.executable); print(sys.version)\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-pip-path",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble pip -V"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-venv-pip-version",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble /usr/share/docassemble/local3.14/bin/pip -V"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "step6-install-package-venv",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble /usr/share/docassemble/local3.14/bin/pip install --no-cache-dir --upgrade git+https://github.com/Adsco1727/docassemble-dpolawstack.git"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp6-package-in-keeper-venv",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble /usr/share/docassemble/local3.14/bin/pip show docassemble.dpolawstack"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-check-slash",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp9-final-acceptance-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker ps -a && curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp8-keeper-logs-tail",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker logs --tail 120 docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-status-only",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"try { $r = Invoke-WebRequest -Uri 'http://localhost/run/dpolawstack/law_stack_frontdoor/' -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 15; Write-Output ('RUN_STATUS=' + $r.StatusCode) } catch { if ($_.Exception.Response -and $_.Exception.Response.StatusCode) { Write-Output ('RUN_STATUS=' + [int]$_.Exception.Response.StatusCode) } else { Write-Output ('RUN_STATUS=ERROR') } }"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp8-ledger-file-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble sh -c \"if [ -f /usr/share/docassemble/local3.14/lib/python3.14/dpo_system/operator_ledger.xlsx ]; then echo LEDGER_PRESENT=1; else echo LEDGER_PRESENT=0; fi\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp8-ledger-file-check-simple",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble ls /usr/share/docassemble/local3.14/lib/python3.14/dpo_system/operator_ledger.xlsx && echo LEDGER_PRESENT=1 || echo LEDGER_PRESENT=0"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "fix-ledger-create-target-dir",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble mkdir -p /usr/share/docassemble/local3.14/lib/python3.14/dpo_system"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "fix-ledger-copy-into-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker cp c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\dpo_system\\operator_ledger.xlsx docassemble:/usr/share/docassemble/local3.14/lib/python3.14/dpo_system/operator_ledger.xlsx"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-ledger-present-after-copy",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble ls -l /usr/share/docassemble/local3.14/lib/python3.14/dpo_system/operator_ledger.xlsx"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-ledger-health-in-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble /usr/share/docassemble/local3.14/bin/python -c \"from docassemble.dpolawstack.ledger_helpers import ledger_health; print('LEDGER_MISSING=' + str(ledger_health()))\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-check-after-ledger",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "sync-frontdoor-yaml-into-keeper",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker cp c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\docassemble-dpolawstack\\docassemble\\dpolawstack\\data\\questions\\law_stack_frontdoor.yml docassemble:/usr/share/docassemble/local3.14/lib/python3.14/site-packages/docassemble/dpolawstack/data/questions/law_stack_frontdoor.yml"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "restart-uwsgi-for-yaml-refresh",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble supervisorctl restart uwsgi"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp7-run-url-check-after-yaml-fix",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code} REDIR=%{redirect_url}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp9-http-status-post-fix",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp8-log-probe-ledger-errors",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker logs --tail 200 docassemble | findstr /I \"FileNotFoundError operator_ledger\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cp8-logs-tail-post-fix",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker logs --tail 80 docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "inspect-docassemble-mounts",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker inspect docassemble --format \"{{json .Mounts}}\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "inspect-docassemble-mounts-plain",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker inspect docassemble"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "apply-orchestrator-compose-ledger-persistence",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"pushd c:\\Users\\Gary\\GitHub\\orchestrator && docker compose up -d docassemble && popd"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-orchestrator-ledger-mount",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker inspect docassemble | findstr /I \"operator_ledger.xlsx DPO_LEDGER_PATH\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-ledger-inside-container-path",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble ls -l /usr/share/docassemble/files/data/static/operator_ledger.xlsx"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-run-url-post-persistence",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "quick-root-status",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"HTTP_STATUS=%{http_code}\" http://localhost"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "quick-run-status",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "quick-run-error-body",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cleanup-bad-ledger-dir-in-volume",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble sh -c \"rm -rf /usr/share/docassemble/files/data/static/operator_ledger.xlsx\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "recreate-docassemble-with-fixed-ledger-mount",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"pushd c:\\Users\\Gary\\GitHub\\orchestrator && docker compose up -d docassemble && popd"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "cleanup-ledger-dir-in-volume-direct",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker run --rm -v orchestrator_docassemble_data:/data alpine rm -rf /data/files/data/static/operator_ledger.xlsx"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "start-docassemble-after-volume-cleanup",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"pushd c:\\Users\\Gary\\GitHub\\orchestrator && docker compose up -d docassemble && popd"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-ledger-file-mounted-now",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble stat /usr/share/docassemble/files/data/static/operator_ledger.xlsx"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-dpo-ledger-env-runtime",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble printenv DPO_LEDGER_PATH"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "verify-run-url-final-status",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "housekeeping-check-package-present",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble /usr/share/docassemble/local3.14/bin/pip show docassemble.dpolawstack"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "housekeeping-check-interview-file-in-site-packages",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"docker exec docassemble ls -l /usr/share/docassemble/local3.14/lib/python3.14/site-packages/docassemble/dpolawstack/data/questions/law_stack_frontdoor.yml"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "housekeeping-check-direct-interview-url",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"INTERVIEW_STATUS=%{http_code}\" \"http://localhost/interview?i=docassemble.dpolawstack:data/questions/law_stack_frontdoor.yml\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "housekeeping-check-run-alias-variants",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"A=%{http_code}\" http://localhost/run/dpolawstack/law_stack_frontdoor/ & curl -s -o NUL -w \" B=%{http_code}\" http://localhost/run/docassemble.dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "housekeeping-final-run-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"curl -s -o NUL -w \"RUN_STATUS=%{http_code}\" http://localhost/run/dpolawstack/law_stack_frontdoor/"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-runner-status-dryrun",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner status"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "ecosystem-repo-existence-check",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$repos = @('Adsco1727/dpo_system','Adsco1727/legal-tech-class','Adsco1727/docassemble-dpolawstack','Adsco1727/dpo-ledger-tools','Adsco1727/dpo-interview-suite','Adsco1727/dpo-admin-tools','Adsco1727/dpo-casework','Adsco1727/dpo-automation-suite','Adsco1727/dpo-integrations'); foreach ($r in $repos) { try { $resp = Invoke-WebRequest -Uri (\"https://api.github.com/repos/\" + $r) -UseBasicParsing -TimeoutSec 12; Write-Output ($r + ' => ' + [int]$resp.StatusCode) } catch { if ($_.Exception.Response -and $_.Exception.Response.StatusCode) { Write-Output ($r + ' => ' + [int]$_.Exception.Response.StatusCode) } else { Write-Output ($r + ' => ERROR') } } }"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-final-status-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner status"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-final-github-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner check-gh"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-apply-ledger-sync",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner sync-repos --apply"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-seed-ingestion-queue",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner queue-notebooks --apply"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-seed-dialer-queue",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner queue-dialer --apply"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-post-apply-status-check",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner status"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-probe-repo-slugs",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\tmp_repo_probe.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-search-repo-slugs-global",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\tmp_repo_search.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-final-github-check-corrected",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner check-gh"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-apply-ledger-sync-corrected",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner sync-repos --apply"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "phase-post-correction-status",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/d",
+				"/c",
+				"c:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\.venv\\Scripts\\python.exe -m dpo_system.src.phase_runner status"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		}
+	]
+}

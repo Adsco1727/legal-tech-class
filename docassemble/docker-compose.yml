@@ -1,0 +1,19 @@
+services:
+  docassemble:
+    image: jhpyle/docassemble:latest
+    container_name: legal-tech-class-docassemble
+    restart: unless-stopped
+    stop_grace_period: 600s
+    ports:
+      - "9080:80"
+      - "9443:443"
+    env_file:
+      - ./env.list
+    volumes:
+      - docassemble_certs:/usr/share/docassemble/certs
+      - docassemble_backup:/usr/share/docassemble/backup
+      - ../dpo_system/operator_ledger.xlsx:/usr/share/docassemble/files/data/static/operator_ledger.xlsx:ro
+
+volumes:
+  docassemble_certs:
+  docassemble_backup:

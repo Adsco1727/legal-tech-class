@@ -1,0 +1,42 @@
+schema:
+  name: transactions
+  version: 1
+  required:
+    - transaction_id
+    - run_id
+    - wave_id
+    - jurisdiction
+    - queue_state
+    - risk_class
+    - amount
+    - currency
+  properties:
+    transaction_id:
+      type: string
+      min_length: 8
+      max_length: 128
+    run_id:
+      type: string
+      min_length: 8
+      max_length: 128
+    wave_id:
+      type: integer
+      min: 1
+    jurisdiction:
+      type: string
+    queue_state:
+      type: string
+      enum: [new, ready_for_review, approved, rejected, escalated, executed, archived]
+    risk_class:
+      type: string
+      enum: [auto, review_required, escalate, blocked]
+    amount:
+      type: number
+    currency:
+      type: string
+      enum: [USD, CAD, EUR, GBP, MXN]
+constraints:
+  unique_keys:
+    - transaction_id
+relationships:
+  jurisdiction_to_tax_model: true

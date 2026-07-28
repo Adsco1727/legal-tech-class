@@ -1,0 +1,18 @@
+modules:
+  scrapers.na_scraper:
+    deployment: desktop_only
+  scrapers.eu_scraper:
+    deployment: desktop_only
+  financial.statements.income_statement:
+    deployment: desktop_only
+  integrations.docassemble_client:
+    deployment: runtime_required
+  integrations.legal_nlp_adapter:
+    deployment: runtime_required
+pipelines:
+  pipelines.run_ingestion:
+    deployment: desktop_only
+  pipelines.run_operator_jobs:
+    deployment: desktop_only
+  pipelines.run_minimal_runtime_check:
+    deployment: runtime_required

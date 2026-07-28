@@ -1,0 +1,54 @@
+version: 1
+name: runtime_boundary
+
+description: Promotion policy for dtop to ltop.
+
+environments:
+  dtop:
+    role: build_test_orchestrate
+  ltop:
+    role: minimal_runtime
+
+module_policy:
+  scrapers:
+    deploy_to_ltop: false
+    reason: Desktop-only acquisition workload.
+  parsers:
+    deploy_to_ltop: conditional
+    condition: required_by_runtime_pipeline
+  integrations:
+    deploy_to_ltop: conditional
+    condition: runtime_required_tag_true
+  financial:
+    deploy_to_ltop: false
+    reason: Heavy modeling remains desktop-side.
+  pipelines:
+    deploy_to_ltop: conditional
+    condition: runtime_required_tag_true
+  notebooks:
+    deploy_to_ltop: false
+    reason: Operator surfaces run on desktop.
+  shadow_crm:
+    deploy_to_ltop: false
+  contracts:
+    deploy_to_ltop: true
+  state:
+    deploy_to_ltop: true
+  tests:
+    deploy_to_ltop: false
+
+required_module_metadata:
+  - module_name
+  - runtime_required
+  - owner
+  - depends_on
+  - python_version
+
+python_compatibility:
+  docassemble_or_solidity_connected: 3.9.11
+
+promotion_rules:
+  - all contract validations must pass
+  - all required tests must pass on dtop
+  - only runtime_required true modules can be promoted to ltop
+  - promotion must record release_id and commit_hash
