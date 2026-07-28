@@ -17,6 +17,9 @@
 __pycache__/
 *.pyc
 docassemble-dpolawstack/
+dpo-ledger-tools/
+dpo-interview-suite/
+dpo-admin-tools/
 
 npm-debug.log*
 yarn-debug.log*

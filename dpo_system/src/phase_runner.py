@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import urllib.error
 import urllib.request
 from urllib.parse import urlparse
@@ -99,7 +100,11 @@ def load_repo_manifest(path: Path) -> list[dict[str, Any]]:
 
 def _gh_latest_commit(repo_slug: str, timeout_sec: int = 12) -> tuple[bool, str, str]:
     url = f"https://api.github.com/repos/{repo_slug}/commits?per_page=1"
-    req = urllib.request.Request(url, headers={"User-Agent": "dpo-phase-runner"})
+    headers = {"User-Agent": "dpo-phase-runner"}
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=timeout_sec) as resp:
             payload = json.loads(resp.read().decode("utf-8"))
