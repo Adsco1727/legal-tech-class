@@ -20,6 +20,7 @@ docassemble-dpolawstack/
 dpo-ledger-tools/
 dpo-interview-suite/
 dpo-admin-tools/
+dpo-casework/
 
 npm-debug.log*
 yarn-debug.log*
