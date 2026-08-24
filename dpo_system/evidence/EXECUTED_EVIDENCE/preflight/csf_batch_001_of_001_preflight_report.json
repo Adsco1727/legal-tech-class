@@ -1,0 +1,23 @@
+{
+  "validator": "dpo_csf_preflight",
+  "version": 1,
+  "seed_path": "dpo_system\\config\\outbound_batches\\csf_batch_001_of_001.csv",
+  "generated_at": "2026-08-22T09:56:38Z",
+  "expected_rows": 500,
+  "actual_rows": 0,
+  "status": "FAIL",
+  "errors": [
+    {
+      "code": "seed_not_found",
+      "message": "seed file does not exist: dpo_system\\config\\outbound_batches\\csf_batch_001_of_001.csv"
+    }
+  ],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "seed_exists",
+      "passed": false
+    }
+  ],
+  "input_digest_sha256": ""
+}

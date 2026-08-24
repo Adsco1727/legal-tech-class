@@ -1,0 +1,11 @@
+{
+  "run_at": "2026-08-12T23:40:56Z",
+  "records": 1,
+  "errors": 0,
+  "max_entries": 1,
+  "page_size": 100,
+  "csv": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_fast_lane_check\\regd_filings.csv",
+  "enrichment_csv": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_fast_lane_check\\regd_enrichment_targets.csv",
+  "raw_jsonl": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_fast_lane_check\\regd_raw_entries.jsonl",
+  "error_jsonl": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_fast_lane_check\\regd_error_ledger.jsonl"
+}

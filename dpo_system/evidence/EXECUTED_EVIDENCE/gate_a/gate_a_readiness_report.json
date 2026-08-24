@@ -1,0 +1,20 @@
+{
+  "gate": "A",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "vendor_packet_present",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "name": "synthetic_500_build_and_preflight",
+      "passed": true
+    }
+  ],
+  "synthetic": {
+    "rows_built": 500,
+    "batches": 1,
+    "preflight_status": "PASS"
+  }
+}

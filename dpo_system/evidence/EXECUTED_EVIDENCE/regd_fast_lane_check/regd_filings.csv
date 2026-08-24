@@ -1,0 +1,2 @@
+filing_id,filing_type,jurisdiction,issuer_name,exemption_type,filing_date,source_url,accession_number,cik,fetched_at,parser_version
+0001193125-26-347217,RegD,US,"Fossil Group, Inc. (0000883569) (Filer)",14(a)(12),2026-08-12,https://www.sec.gov/Archives/edgar/data/883569/000119312526347217/0001193125-26-347217-index.htm,0001193125-26-347217,,2026-08-12T23:40:56Z,regd_scraper_pack_v1

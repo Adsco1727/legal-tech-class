@@ -1,0 +1,166 @@
+{
+  "validator": "dpo_csf_preflight",
+  "version": 1,
+  "seed_path": "dpo_system\\config\\outbound_batches\\live\\csf_live_001_of_013.csv",
+  "generated_at": "2026-08-05T19:20:20Z",
+  "expected_rows": 500,
+  "actual_rows": 500,
+  "status": "FAIL",
+  "errors": [
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 11,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 12,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 64,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 67,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 68,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 104,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 105,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 313,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 321,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 348,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 406,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 407,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 408,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 409,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 410,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 411,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 432,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 437,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 438,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 469,
+      "column": "phone_number"
+    },
+    {
+      "code": "missing_required_value",
+      "message": "phone_number is required",
+      "row": 472,
+      "column": "phone_number"
+    }
+  ],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "required_headers_present",
+      "passed": true,
+      "missing_headers": []
+    },
+    {
+      "name": "no_unknown_headers",
+      "passed": true,
+      "unknown_headers": []
+    },
+    {
+      "name": "row_count_matches_expected",
+      "passed": true,
+      "expected_rows": 500,
+      "actual_rows": 500
+    },
+    {
+      "name": "rows_valid",
+      "passed": false
+    }
+  ],
+  "input_digest_sha256": "7c75ce3b1151d86eef339cee22a93dbff9b43a358afb070b43adfcd3f703dc3f",
+  "summary": {
+    "error_count": 21,
+    "warning_count": 0,
+    "unique_record_ids": 500
+  }
+}

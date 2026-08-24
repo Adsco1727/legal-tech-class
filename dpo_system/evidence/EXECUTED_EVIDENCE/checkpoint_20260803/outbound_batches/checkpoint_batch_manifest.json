@@ -1,0 +1,11 @@
+{
+  "total_rows": 10,
+  "batch_size": 500,
+  "total_batches": 1,
+  "files": [
+    "dpo_system\\evidence\\EXECUTED_EVIDENCE\\checkpoint_20260803\\outbound_batches\\checkpoint_batch_001_of_001.csv"
+  ],
+  "batch_counts": [
+    10
+  ]
+}

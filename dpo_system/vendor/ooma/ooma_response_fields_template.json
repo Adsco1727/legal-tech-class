@@ -1,0 +1,15 @@
+{
+  "csv_import_supported": false,
+  "required_optional_fields_confirmed": false,
+  "phone_format_rule_confirmed": false,
+  "identifier_roundtrip_confirmed": false,
+  "custom_fields_behavior_confirmed": false,
+  "upload_limits_confirmed": false,
+  "dedupe_behavior_confirmed": false,
+  "append_replace_behavior_confirmed": false,
+  "disposition_export_confirmed": false,
+  "pilot_10_row_approved": false,
+  "pilot_25_to_50_row_approved": false,
+  "decision": "not_accepted",
+  "notes": "Fill this file using Ooma's written response. Set decision to accepted_as_is or accepted_with_changes when vendor confirmation is complete."
+}

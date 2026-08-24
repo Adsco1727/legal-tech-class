@@ -1,0 +1,11 @@
+record_id,phone_number,full_name,list_name,outreach_purpose,list_source,email,address,notes,source_system
+csf20260801-000001,+14165551234,John Smith,csf_launch,onboarding,CSF Batch 01,john.smith@example.com,"123 Main St, Toronto, ON","pilot row 1 | internal source google_db",google_db
+csf20260801-000002,+14165551235,Maria Chen,csf_launch,onboarding,CSF Batch 01,maria.chen@example.com,"456 King St W, Toronto, ON","pilot row 2 | internal source google_db",google_db
+csf20260801-000003,+14165551236,David Patel,csf_launch,verification,CSF Batch 01,david.patel@example.com,"789 Queen St E, Toronto, ON","pilot row 3 | internal source google_db",google_db
+csf20260801-000004,+14165551237,Sarah Johnson,csf_launch,verification,CSF Batch 01,sarah.johnson@example.com,"101 Front St, Toronto, ON","pilot row 4 | internal source google_db",google_db
+csf20260801-000005,+14165551238,Michael Brown,csf_launch,follow_up,CSF Batch 01,michael.brown@example.com,"202 Bay St, Toronto, ON","pilot row 5 | internal source google_db",google_db
+csf20260801-000006,+14165551239,Olivia Garcia,csf_launch,follow_up,CSF Batch 01,olivia.garcia@example.com,"303 Yonge St, Toronto, ON","pilot row 6 | internal source google_db",google_db
+csf20260801-000007,+14165551240,James Wilson,csf_launch,onboarding,CSF Batch 01,james.wilson@example.com,"404 Bloor St W, Toronto, ON","pilot row 7 | internal source google_db",google_db
+csf20260801-000008,+14165551241,Emily Davis,csf_launch,verification,CSF Batch 01,emily.davis@example.com,"505 Dundas St W, Toronto, ON","pilot row 8 | internal source google_db",google_db
+csf20260801-000009,+14165551242,Daniel Lee,csf_launch,follow_up,CSF Batch 01,daniel.lee@example.com,"606 College St, Toronto, ON","pilot row 9 | internal source google_db",google_db
+csf20260801-000010,+14165551243,Sophia Martin,csf_launch,onboarding,CSF Batch 01,sophia.martin@example.com,"707 Spadina Ave, Toronto, ON","pilot row 10 | internal source google_db",google_db

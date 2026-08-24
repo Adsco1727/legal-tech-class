@@ -1,0 +1,11 @@
+lead_id,phone_number,full_name,email,address,notes,source_system,campaign_name
+csf20260801-000001,+14165551234,John Smith,john.smith@example.com,"123 Main St, Toronto, ON",pilot row 1 | internal source google_db,google_db,csf_launch
+csf20260801-000002,+14165551235,Maria Chen,maria.chen@example.com,"456 King St W, Toronto, ON",pilot row 2 | internal source google_db,google_db,csf_launch
+csf20260801-000003,+14165551236,David Patel,david.patel@example.com,"789 Queen St E, Toronto, ON",pilot row 3 | internal source google_db,google_db,csf_launch
+csf20260801-000004,+14165551237,Sarah Johnson,sarah.johnson@example.com,"101 Front St, Toronto, ON",pilot row 4 | internal source google_db,google_db,csf_launch
+csf20260801-000005,+14165551238,Michael Brown,michael.brown@example.com,"202 Bay St, Toronto, ON",pilot row 5 | internal source google_db,google_db,csf_launch
+csf20260801-000006,+14165551239,Olivia Garcia,olivia.garcia@example.com,"303 Yonge St, Toronto, ON",pilot row 6 | internal source google_db,google_db,csf_launch
+csf20260801-000007,+14165551240,James Wilson,james.wilson@example.com,"404 Bloor St W, Toronto, ON",pilot row 7 | internal source google_db,google_db,csf_launch
+csf20260801-000008,+14165551241,Emily Davis,emily.davis@example.com,"505 Dundas St W, Toronto, ON",pilot row 8 | internal source google_db,google_db,csf_launch
+csf20260801-000009,+14165551242,Daniel Lee,daniel.lee@example.com,"606 College St, Toronto, ON",pilot row 9 | internal source google_db,google_db,csf_launch
+csf20260801-000010,+14165551243,Sophia Martin,sophia.martin@example.com,"707 Spadina Ave, Toronto, ON",pilot row 10 | internal source google_db,google_db,csf_launch

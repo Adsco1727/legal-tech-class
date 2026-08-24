@@ -1,0 +1,10 @@
+{
+  "run_at": "2026-08-12T23:15:03Z",
+  "records": 5,
+  "errors": 0,
+  "max_entries": 5,
+  "page_size": 100,
+  "csv": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_live_run\\regd_filings.csv",
+  "raw_jsonl": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_live_run\\regd_raw_entries.jsonl",
+  "error_jsonl": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\regd_live_run\\regd_error_ledger.jsonl"
+}

@@ -1,0 +1,39 @@
+{
+  "validator": "dpo_csf_preflight",
+  "version": 1,
+  "seed_path": "dpo_system\\evidence\\EXECUTED_EVIDENCE\\checkpoint_20260803\\outbound_batches\\checkpoint_batch_001_of_001.csv",
+  "generated_at": "2026-08-04T18:50:44Z",
+  "expected_rows": 10,
+  "actual_rows": 10,
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "required_headers_present",
+      "passed": true,
+      "missing_headers": []
+    },
+    {
+      "name": "no_unknown_headers",
+      "passed": true,
+      "unknown_headers": []
+    },
+    {
+      "name": "row_count_matches_expected",
+      "passed": true,
+      "expected_rows": 10,
+      "actual_rows": 10
+    },
+    {
+      "name": "rows_valid",
+      "passed": true
+    }
+  ],
+  "input_digest_sha256": "58f72144e4481a963caca2e62c028cf39506ee3db3fe01d644fbd3c3aa8a8dda",
+  "summary": {
+    "error_count": 0,
+    "warning_count": 0,
+    "unique_record_ids": 10
+  }
+}

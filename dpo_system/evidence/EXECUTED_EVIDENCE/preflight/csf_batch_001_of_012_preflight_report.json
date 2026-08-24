@@ -1,0 +1,3040 @@
+{
+  "validator": "dpo_csf_preflight",
+  "version": 1,
+  "seed_path": "dpo_system\\config\\outbound_batches\\csf_batch_001_of_012.csv",
+  "generated_at": "2026-08-22T10:10:19Z",
+  "expected_rows": 500,
+  "actual_rows": 500,
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 2,
+      "record_id": "27676"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 3,
+      "record_id": "27679"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 4,
+      "record_id": "27680"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 5,
+      "record_id": "27681"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 6,
+      "record_id": "27682"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 7,
+      "record_id": "27685"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 8,
+      "record_id": "27686"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 9,
+      "record_id": "27687"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 10,
+      "record_id": "27688"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 11,
+      "record_id": "27691"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 12,
+      "record_id": "27692"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 13,
+      "record_id": "27693"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 14,
+      "record_id": "27694"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 15,
+      "record_id": "27695"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 16,
+      "record_id": "27696"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 17,
+      "record_id": "27697"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 18,
+      "record_id": "27698"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 19,
+      "record_id": "27699"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 20,
+      "record_id": "27700"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 21,
+      "record_id": "27701"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 22,
+      "record_id": "27702"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 23,
+      "record_id": "27704"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 24,
+      "record_id": "27705"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 25,
+      "record_id": "27706"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 26,
+      "record_id": "27707"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 27,
+      "record_id": "27708"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 28,
+      "record_id": "27709"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 29,
+      "record_id": "27710"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 30,
+      "record_id": "27711"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 31,
+      "record_id": "27712"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 32,
+      "record_id": "27713"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 33,
+      "record_id": "27714"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 34,
+      "record_id": "27715"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 35,
+      "record_id": "27716"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 36,
+      "record_id": "27717"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 37,
+      "record_id": "27718"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 38,
+      "record_id": "27719"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 39,
+      "record_id": "27720"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 40,
+      "record_id": "27721"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 41,
+      "record_id": "27722"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 42,
+      "record_id": "27723"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 43,
+      "record_id": "27724"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 44,
+      "record_id": "27725"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 45,
+      "record_id": "27726"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 46,
+      "record_id": "27727"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 47,
+      "record_id": "27728"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 48,
+      "record_id": "27729"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 49,
+      "record_id": "27730"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 50,
+      "record_id": "27731"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 51,
+      "record_id": "27732"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 52,
+      "record_id": "27733"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 53,
+      "record_id": "27734"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 54,
+      "record_id": "27735"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 55,
+      "record_id": "27736"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 56,
+      "record_id": "27737"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 57,
+      "record_id": "27738"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 58,
+      "record_id": "27739"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 59,
+      "record_id": "27740"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 60,
+      "record_id": "27741"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 61,
+      "record_id": "27742"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 62,
+      "record_id": "27745"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 63,
+      "record_id": "27746"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 64,
+      "record_id": "27749"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 65,
+      "record_id": "27750"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 66,
+      "record_id": "27751"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 67,
+      "record_id": "27752"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 68,
+      "record_id": "27753"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 69,
+      "record_id": "27754"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 70,
+      "record_id": "27755"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 71,
+      "record_id": "27756"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 72,
+      "record_id": "27757"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 73,
+      "record_id": "27758"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 74,
+      "record_id": "27759"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 75,
+      "record_id": "27760"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 76,
+      "record_id": "27761"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 77,
+      "record_id": "27762"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 78,
+      "record_id": "27763"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 79,
+      "record_id": "27764"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 80,
+      "record_id": "27765"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 81,
+      "record_id": "27766"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 82,
+      "record_id": "27767"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 83,
+      "record_id": "27768"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 84,
+      "record_id": "27769"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 85,
+      "record_id": "27770"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 86,
+      "record_id": "27772"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 87,
+      "record_id": "27773"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 88,
+      "record_id": "27774"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 89,
+      "record_id": "27775"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 90,
+      "record_id": "27776"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 91,
+      "record_id": "27777"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 92,
+      "record_id": "27778"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 93,
+      "record_id": "27779"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 94,
+      "record_id": "27780"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 95,
+      "record_id": "27781"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 96,
+      "record_id": "27782"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 97,
+      "record_id": "27783"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 98,
+      "record_id": "27784"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 99,
+      "record_id": "27787"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 100,
+      "record_id": "27788"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 101,
+      "record_id": "27789"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 102,
+      "record_id": "27790"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 103,
+      "record_id": "27791"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 104,
+      "record_id": "27792"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 105,
+      "record_id": "27793"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 106,
+      "record_id": "27794"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 107,
+      "record_id": "27795"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 108,
+      "record_id": "27796"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 109,
+      "record_id": "27797"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 110,
+      "record_id": "27798"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 111,
+      "record_id": "27799"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 112,
+      "record_id": "27800"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 113,
+      "record_id": "27801"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 114,
+      "record_id": "27802"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 115,
+      "record_id": "27803"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 116,
+      "record_id": "27804"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 117,
+      "record_id": "27805"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 118,
+      "record_id": "27806"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 119,
+      "record_id": "27807"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 120,
+      "record_id": "27808"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 121,
+      "record_id": "27811"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 122,
+      "record_id": "27812"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 123,
+      "record_id": "27813"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 124,
+      "record_id": "27814"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 125,
+      "record_id": "27815"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 126,
+      "record_id": "27816"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 127,
+      "record_id": "27817"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 128,
+      "record_id": "27818"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 129,
+      "record_id": "27819"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 130,
+      "record_id": "27820"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 131,
+      "record_id": "27821"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 132,
+      "record_id": "27822"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 133,
+      "record_id": "27823"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 134,
+      "record_id": "27824"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 135,
+      "record_id": "27825"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 136,
+      "record_id": "27826"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 137,
+      "record_id": "27827"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 138,
+      "record_id": "27828"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 139,
+      "record_id": "27829"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 140,
+      "record_id": "27830"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 141,
+      "record_id": "27831"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 142,
+      "record_id": "27832"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 143,
+      "record_id": "27833"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 144,
+      "record_id": "27835"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 145,
+      "record_id": "27836"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 146,
+      "record_id": "27837"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 147,
+      "record_id": "27838"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 148,
+      "record_id": "27839"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 149,
+      "record_id": "27840"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 150,
+      "record_id": "27841"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 151,
+      "record_id": "27842"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 152,
+      "record_id": "27844"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 153,
+      "record_id": "27845"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 154,
+      "record_id": "27846"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 155,
+      "record_id": "27847"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 156,
+      "record_id": "27848"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 157,
+      "record_id": "27849"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 158,
+      "record_id": "27850"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 159,
+      "record_id": "27851"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 160,
+      "record_id": "27852"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 161,
+      "record_id": "27853"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 162,
+      "record_id": "27854"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 163,
+      "record_id": "27855"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 164,
+      "record_id": "27856"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 165,
+      "record_id": "27857"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 166,
+      "record_id": "27858"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 167,
+      "record_id": "27859"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 168,
+      "record_id": "27860"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 169,
+      "record_id": "27861"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 170,
+      "record_id": "27862"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 171,
+      "record_id": "27863"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 172,
+      "record_id": "27864"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 173,
+      "record_id": "27865"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 174,
+      "record_id": "27866"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 175,
+      "record_id": "27867"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 176,
+      "record_id": "27868"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 177,
+      "record_id": "27869"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 178,
+      "record_id": "27870"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 179,
+      "record_id": "27871"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 180,
+      "record_id": "27872"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 181,
+      "record_id": "27873"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 182,
+      "record_id": "27874"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 183,
+      "record_id": "27875"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 184,
+      "record_id": "27876"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 185,
+      "record_id": "27877"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 186,
+      "record_id": "27878"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 187,
+      "record_id": "27879"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 188,
+      "record_id": "27880"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 189,
+      "record_id": "27881"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 190,
+      "record_id": "27882"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 191,
+      "record_id": "27883"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 192,
+      "record_id": "27884"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 193,
+      "record_id": "27885"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 194,
+      "record_id": "27886"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 195,
+      "record_id": "27887"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 196,
+      "record_id": "27888"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 197,
+      "record_id": "27889"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 198,
+      "record_id": "27890"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 199,
+      "record_id": "27891"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 200,
+      "record_id": "27892"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 201,
+      "record_id": "27893"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 202,
+      "record_id": "27894"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 203,
+      "record_id": "27895"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 204,
+      "record_id": "27896"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 205,
+      "record_id": "27897"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 206,
+      "record_id": "27898"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 207,
+      "record_id": "27899"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 208,
+      "record_id": "27900"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 209,
+      "record_id": "27901"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 210,
+      "record_id": "27902"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 211,
+      "record_id": "27903"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 212,
+      "record_id": "27904"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 213,
+      "record_id": "27905"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 214,
+      "record_id": "27906"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 215,
+      "record_id": "27907"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 216,
+      "record_id": "27908"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 217,
+      "record_id": "27909"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 218,
+      "record_id": "27910"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 219,
+      "record_id": "27911"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 220,
+      "record_id": "27912"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 221,
+      "record_id": "27913"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 222,
+      "record_id": "27914"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 223,
+      "record_id": "27915"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 224,
+      "record_id": "27916"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 225,
+      "record_id": "27917"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 226,
+      "record_id": "27918"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 227,
+      "record_id": "27919"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 228,
+      "record_id": "27920"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 229,
+      "record_id": "27921"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 230,
+      "record_id": "27922"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 231,
+      "record_id": "27923"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 232,
+      "record_id": "27924"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 233,
+      "record_id": "27925"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 234,
+      "record_id": "27931"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 235,
+      "record_id": "27932"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 236,
+      "record_id": "27933"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 237,
+      "record_id": "27934"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 238,
+      "record_id": "27935"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 239,
+      "record_id": "27936"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 240,
+      "record_id": "27937"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 241,
+      "record_id": "27938"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 242,
+      "record_id": "27939"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 243,
+      "record_id": "27940"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 244,
+      "record_id": "27941"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 245,
+      "record_id": "27942"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 246,
+      "record_id": "27943"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 247,
+      "record_id": "27944"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 248,
+      "record_id": "27945"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 249,
+      "record_id": "27946"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 250,
+      "record_id": "27947"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 251,
+      "record_id": "27948"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 252,
+      "record_id": "27949"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 253,
+      "record_id": "27950"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 254,
+      "record_id": "27951"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 255,
+      "record_id": "27952"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 256,
+      "record_id": "27953"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 257,
+      "record_id": "27954"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 258,
+      "record_id": "27955"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 259,
+      "record_id": "27956"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 260,
+      "record_id": "27957"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 261,
+      "record_id": "27958"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 262,
+      "record_id": "27959"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 263,
+      "record_id": "27960"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 264,
+      "record_id": "27961"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 265,
+      "record_id": "27962"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 266,
+      "record_id": "27963"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 267,
+      "record_id": "27964"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 268,
+      "record_id": "27965"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 269,
+      "record_id": "27966"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 270,
+      "record_id": "27967"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 271,
+      "record_id": "27969"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 272,
+      "record_id": "27970"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 273,
+      "record_id": "27971"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 274,
+      "record_id": "27972"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 275,
+      "record_id": "27973"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 276,
+      "record_id": "27974"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 277,
+      "record_id": "27975"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 278,
+      "record_id": "27976"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 279,
+      "record_id": "27977"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 280,
+      "record_id": "27978"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 281,
+      "record_id": "27979"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 282,
+      "record_id": "27980"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 283,
+      "record_id": "27981"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 284,
+      "record_id": "27982"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 285,
+      "record_id": "27983"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 286,
+      "record_id": "27984"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 287,
+      "record_id": "27985"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 288,
+      "record_id": "27986"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 289,
+      "record_id": "27987"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 290,
+      "record_id": "27988"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 291,
+      "record_id": "27989"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 292,
+      "record_id": "27990"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 293,
+      "record_id": "27991"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 294,
+      "record_id": "28024"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 295,
+      "record_id": "28025"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 296,
+      "record_id": "28026"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 297,
+      "record_id": "28027"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 298,
+      "record_id": "28029"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 299,
+      "record_id": "28030"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 300,
+      "record_id": "28031"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 301,
+      "record_id": "28032"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 302,
+      "record_id": "28033"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 303,
+      "record_id": "28034"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 304,
+      "record_id": "28035"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 305,
+      "record_id": "28036"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 306,
+      "record_id": "28038"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 307,
+      "record_id": "28039"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 308,
+      "record_id": "28040"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 309,
+      "record_id": "28041"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 310,
+      "record_id": "28042"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 311,
+      "record_id": "28043"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 312,
+      "record_id": "28044"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 313,
+      "record_id": "28046"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 314,
+      "record_id": "28047"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 315,
+      "record_id": "28048"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 316,
+      "record_id": "28049"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 317,
+      "record_id": "28050"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 318,
+      "record_id": "28051"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 319,
+      "record_id": "28052"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 320,
+      "record_id": "28053"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 321,
+      "record_id": "28054"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 322,
+      "record_id": "28055"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 323,
+      "record_id": "28056"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 324,
+      "record_id": "28057"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 325,
+      "record_id": "28058"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 326,
+      "record_id": "28059"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 327,
+      "record_id": "28060"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 328,
+      "record_id": "28061"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 329,
+      "record_id": "28062"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 330,
+      "record_id": "28063"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 331,
+      "record_id": "28064"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 332,
+      "record_id": "28065"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 333,
+      "record_id": "28066"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 334,
+      "record_id": "28067"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 335,
+      "record_id": "28068"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 336,
+      "record_id": "28069"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 337,
+      "record_id": "28070"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 338,
+      "record_id": "28071"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 339,
+      "record_id": "28074"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 340,
+      "record_id": "28075"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 341,
+      "record_id": "28076"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 342,
+      "record_id": "28077"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 343,
+      "record_id": "28078"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 344,
+      "record_id": "28079"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 345,
+      "record_id": "28081"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 346,
+      "record_id": "28082"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 347,
+      "record_id": "28083"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 348,
+      "record_id": "28084"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 349,
+      "record_id": "28085"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 350,
+      "record_id": "28086"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 351,
+      "record_id": "28087"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 352,
+      "record_id": "28088"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 353,
+      "record_id": "28089"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 354,
+      "record_id": "28090"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 355,
+      "record_id": "28091"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 356,
+      "record_id": "28092"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 357,
+      "record_id": "28093"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 358,
+      "record_id": "28094"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 359,
+      "record_id": "28095"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 360,
+      "record_id": "28096"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 361,
+      "record_id": "28097"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 362,
+      "record_id": "28098"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 363,
+      "record_id": "28099"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 364,
+      "record_id": "28100"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 365,
+      "record_id": "28101"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 366,
+      "record_id": "28102"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 367,
+      "record_id": "28103"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 368,
+      "record_id": "28104"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 369,
+      "record_id": "28105"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 370,
+      "record_id": "28106"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 371,
+      "record_id": "28107"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 372,
+      "record_id": "28108"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 373,
+      "record_id": "28109"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 374,
+      "record_id": "28110"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 375,
+      "record_id": "28111"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 376,
+      "record_id": "28112"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 377,
+      "record_id": "28113"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 378,
+      "record_id": "28114"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 379,
+      "record_id": "28116"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 380,
+      "record_id": "28117"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 381,
+      "record_id": "28120"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 382,
+      "record_id": "28121"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 383,
+      "record_id": "28122"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 384,
+      "record_id": "28123"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 385,
+      "record_id": "28124"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 386,
+      "record_id": "28125"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 387,
+      "record_id": "28126"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 388,
+      "record_id": "28127"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 389,
+      "record_id": "28128"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 390,
+      "record_id": "28129"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 391,
+      "record_id": "28130"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 392,
+      "record_id": "28131"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 393,
+      "record_id": "28132"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 394,
+      "record_id": "28133"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 395,
+      "record_id": "28134"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 396,
+      "record_id": "28141"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 397,
+      "record_id": "28142"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 398,
+      "record_id": "28143"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 399,
+      "record_id": "28144"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 400,
+      "record_id": "28145"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 401,
+      "record_id": "28149"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 402,
+      "record_id": "28151"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 403,
+      "record_id": "28152"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 404,
+      "record_id": "28153"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 405,
+      "record_id": "28154"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 406,
+      "record_id": "28155"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 407,
+      "record_id": "28156"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 408,
+      "record_id": "28157"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 409,
+      "record_id": "28158"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 410,
+      "record_id": "28159"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 411,
+      "record_id": "28160"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 412,
+      "record_id": "28161"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 413,
+      "record_id": "28162"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 414,
+      "record_id": "28163"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 415,
+      "record_id": "28164"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 416,
+      "record_id": "28166"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 417,
+      "record_id": "28167"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 418,
+      "record_id": "28168"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 419,
+      "record_id": "28169"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 420,
+      "record_id": "28174"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 421,
+      "record_id": "28176"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 422,
+      "record_id": "28177"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 423,
+      "record_id": "28178"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 424,
+      "record_id": "28179"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 425,
+      "record_id": "28182"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 426,
+      "record_id": "28183"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 427,
+      "record_id": "28184"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 428,
+      "record_id": "28185"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 429,
+      "record_id": "28186"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 430,
+      "record_id": "28187"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 431,
+      "record_id": "28188"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 432,
+      "record_id": "28189"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 433,
+      "record_id": "28190"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 434,
+      "record_id": "28191"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 435,
+      "record_id": "28192"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 436,
+      "record_id": "28193"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 437,
+      "record_id": "28194"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 438,
+      "record_id": "28195"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 439,
+      "record_id": "28196"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 440,
+      "record_id": "28197"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 441,
+      "record_id": "28198"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 442,
+      "record_id": "28199"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 443,
+      "record_id": "28200"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 444,
+      "record_id": "28201"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 445,
+      "record_id": "28202"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 446,
+      "record_id": "28203"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 447,
+      "record_id": "28204"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 448,
+      "record_id": "28205"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 449,
+      "record_id": "28206"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 450,
+      "record_id": "28208"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 451,
+      "record_id": "28209"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 452,
+      "record_id": "28211"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 453,
+      "record_id": "28212"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 454,
+      "record_id": "28213"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 455,
+      "record_id": "28214"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 456,
+      "record_id": "28215"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 457,
+      "record_id": "28216"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 458,
+      "record_id": "28217"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 459,
+      "record_id": "28218"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 460,
+      "record_id": "28219"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 461,
+      "record_id": "28220"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 462,
+      "record_id": "28221"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 463,
+      "record_id": "28224"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 464,
+      "record_id": "28225"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 465,
+      "record_id": "28226"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 466,
+      "record_id": "28227"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 467,
+      "record_id": "28228"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 468,
+      "record_id": "28229"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 469,
+      "record_id": "28232"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 470,
+      "record_id": "28233"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 471,
+      "record_id": "28234"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 472,
+      "record_id": "28235"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 473,
+      "record_id": "28236"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 474,
+      "record_id": "28237"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 475,
+      "record_id": "28238"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 476,
+      "record_id": "28239"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 477,
+      "record_id": "28240"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 478,
+      "record_id": "28241"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 479,
+      "record_id": "28242"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 480,
+      "record_id": "28243"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 481,
+      "record_id": "28244"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 482,
+      "record_id": "28245"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 483,
+      "record_id": "28246"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 484,
+      "record_id": "28248"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 485,
+      "record_id": "28249"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 486,
+      "record_id": "28250"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 487,
+      "record_id": "28251"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 488,
+      "record_id": "28252"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 489,
+      "record_id": "28253"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 490,
+      "record_id": "28254"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 491,
+      "record_id": "28255"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 492,
+      "record_id": "28256"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 493,
+      "record_id": "28257"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 494,
+      "record_id": "28258"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 495,
+      "record_id": "28259"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 496,
+      "record_id": "28260"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 497,
+      "record_id": "28261"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 498,
+      "record_id": "28266"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 499,
+      "record_id": "28267"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 500,
+      "record_id": "28268"
+    },
+    {
+      "code": "record_id_already_in_registry",
+      "message": "record_id already exists in global registry; treating as rerun warning",
+      "row": 501,
+      "record_id": "28269"
+    }
+  ],
+  "checks": [
+    {
+      "name": "required_headers_present",
+      "passed": true,
+      "missing_headers": []
+    },
+    {
+      "name": "no_unknown_headers",
+      "passed": true,
+      "unknown_headers": []
+    },
+    {
+      "name": "row_count_matches_expected",
+      "passed": true,
+      "expected_rows": 500,
+      "actual_rows": 500
+    },
+    {
+      "name": "rows_valid",
+      "passed": true
+    }
+  ],
+  "input_digest_sha256": "edb527412d72dbdbc37b680932280af60e5ce29455a97a168c9eee968caccf0b",
+  "summary": {
+    "error_count": 0,
+    "warning_count": 500,
+    "unique_record_ids": 500
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "gate": "B",
+  "status": "FAIL",
+  "response_path": "C:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\dpo_system\\vendor\\ooma\\ooma_response_fields.json",
+  "template_path": "C:\\Users\\Gary\\Documents\\GitHub\\legal-tech-class\\dpo_system\\vendor\\ooma\\ooma_response_fields_template.json",
+  "checks": [
+    {
+      "name": "response_file_present",
+      "passed": true
+    },
+    {
+      "name": "response_file_valid_json",
+      "passed": true
+    },
+    {
+      "name": "required_response_fields",
+      "passed": false,
+      "fields": [
+        {
+          "field": "csv_import_supported",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "required_optional_fields_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "phone_format_rule_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "identifier_roundtrip_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "custom_fields_behavior_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "upload_limits_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "dedupe_behavior_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "append_replace_behavior_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "disposition_export_confirmed",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "pilot_10_row_approved",
+          "present": true,
+          "passed": false,
+          "value": false
+        },
+        {
+          "field": "pilot_25_to_50_row_approved",
+          "present": true,
+          "passed": false,
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "decision_state",
+      "passed": false,
+      "allowed": [
+        "accepted_as_is",
+        "accepted_with_changes",
+        "not_accepted"
+      ],
+      "value": "not_accepted"
+    }
+  ],
+  "missing_fields": [],
+  "decision": "not_accepted",
+  "notes": "Fill this file using Ooma's written response. Set decision to accepted_as_is or accepted_with_changes when vendor confirmation is complete."
+}

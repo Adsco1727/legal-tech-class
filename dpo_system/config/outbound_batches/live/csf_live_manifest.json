@@ -1,0 +1,33 @@
+{
+  "total_rows": 5767,
+  "batch_size": 500,
+  "total_batches": 12,
+  "files": [
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_001_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_002_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_003_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_004_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_005_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_006_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_007_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_008_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_009_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_010_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_011_of_012.csv",
+    "dpo_system\\config\\outbound_batches\\live\\csf_live_012_of_012.csv"
+  ],
+  "batch_counts": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    267
+  ]
+}

@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from openpyxl import load_workbook
+from openpyxl import Workbook, load_workbook
 
 LEDGER_PATH = Path(__file__).resolve().parents[1] / "operator_ledger.xlsx"
 
@@ -43,7 +43,14 @@ SHEET_HEADERS: dict[str, list[str]] = {
         "created_at",
         "updated_at",
         "operator",
+        "workflow_id",
+        "origin_repo",
+        "hop_count",
         "notes",
+        "list_name",
+        "outreach_purpose",
+        "list_source",
+        "outbound_status",
     ],
     "CLAUSE_QUEUE": [
         "clause_task_id",
@@ -55,7 +62,14 @@ SHEET_HEADERS: dict[str, list[str]] = {
         "created_at",
         "updated_at",
         "operator",
+        "workflow_id",
+        "origin_repo",
+        "hop_count",
         "notes",
+        "list_name",
+        "outreach_purpose",
+        "list_source",
+        "outbound_status",
     ],
     "CRM_QUEUE": [
         "crm_task_id",
@@ -66,7 +80,14 @@ SHEET_HEADERS: dict[str, list[str]] = {
         "created_at",
         "updated_at",
         "operator",
+        "workflow_id",
+        "origin_repo",
+        "hop_count",
         "notes",
+        "list_name",
+        "outreach_purpose",
+        "list_source",
+        "outbound_status",
     ],
     "GOVERNANCE_QUEUE": [
         "governance_id",
@@ -77,7 +98,14 @@ SHEET_HEADERS: dict[str, list[str]] = {
         "created_at",
         "updated_at",
         "operator",
+        "workflow_id",
+        "origin_repo",
+        "hop_count",
         "notes",
+        "list_name",
+        "outreach_purpose",
+        "list_source",
+        "outbound_status",
     ],
     "OPERATOR_LOG": [
         "log_id",
@@ -88,6 +116,21 @@ SHEET_HEADERS: dict[str, list[str]] = {
         "target",
         "status",
         "notes",
+    ],
+    "LEDGER_EVENTS": [
+        "event_id",
+        "timestamp",
+        "operator",
+        "notebook",
+        "action",
+        "target",
+        "status",
+        "notes",
+        "item_id",
+        "lane",
+        "decision",
+        "source_id",
+        "evidence_ref",
     ],
 }
 
@@ -115,6 +158,9 @@ ENUM_FIELDS: dict[str, dict[str, set[str]]] = {
     "OPERATOR_LOG": {
         "status": {"ok", "fail"},
     },
+    "LEDGER_EVENTS": {
+        "status": {"ok", "fail"},
+    },
 }
 
 BOOL_FIELDS: dict[str, set[str]] = {
@@ -123,10 +169,10 @@ BOOL_FIELDS: dict[str, set[str]] = {
 
 INT_FIELDS: dict[str, set[str]] = {
     "REPO_STATE": {"wave"},
-    "INGESTION_QUEUE": {"priority"},
-    "CLAUSE_QUEUE": {"priority"},
-    "CRM_QUEUE": {"priority"},
-    "GOVERNANCE_QUEUE": {"priority"},
+    "INGESTION_QUEUE": {"priority", "hop_count"},
+    "CLAUSE_QUEUE": {"priority", "hop_count"},
+    "CRM_QUEUE": {"priority", "hop_count"},
+    "GOVERNANCE_QUEUE": {"priority", "hop_count"},
 }
 
 TIMESTAMP_FIELDS: dict[str, set[str]] = {
@@ -136,6 +182,7 @@ TIMESTAMP_FIELDS: dict[str, set[str]] = {
     "CRM_QUEUE": {"created_at", "updated_at"},
     "GOVERNANCE_QUEUE": {"created_at", "updated_at"},
     "OPERATOR_LOG": {"timestamp"},
+    "LEDGER_EVENTS": {"timestamp"},
 }
 
 AUTO_NOW_FIELDS: dict[str, set[str]] = {
@@ -144,11 +191,31 @@ AUTO_NOW_FIELDS: dict[str, set[str]] = {
     "CRM_QUEUE": {"created_at", "updated_at"},
     "GOVERNANCE_QUEUE": {"created_at", "updated_at"},
     "OPERATOR_LOG": {"timestamp"},
+    "LEDGER_EVENTS": {"timestamp"},
 }
 
 
 def _utc_now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def create_ledger_workbook(path: str | Path) -> Path:
+    ledger_path = Path(path)
+    ledger_path.parent.mkdir(parents=True, exist_ok=True)
+
+    wb = Workbook()
+    first_sheet = True
+    for sheet_name, headers in SHEET_HEADERS.items():
+        if first_sheet:
+            ws = wb.active
+            ws.title = sheet_name
+            first_sheet = False
+        else:
+            ws = wb.create_sheet(title=sheet_name)
+        ws.append(headers)
+
+    wb.save(ledger_path)
+    return ledger_path
 
 
 def timestamp() -> str:
@@ -220,10 +287,30 @@ def _open_ledger(path: Path | None = None):
 def _validate_headers(ws, sheet_name: str) -> None:
     expected = SHEET_HEADERS[sheet_name]
     actual = [cell.value for cell in ws[1]]
-    if actual != expected:
-        raise RuntimeError(
-            f"sheet header mismatch for {sheet_name}; expected {expected}, found {actual}"
-        )
+    if actual == expected:
+        return
+
+    if sheet_name == "GOVERNANCE_QUEUE" and actual == [
+        "governance_id",
+        "interview_name",
+        "action_type",
+        "priority",
+        "status",
+        "created_at",
+        "updated_at",
+        "operator",
+        "notes",
+    ]:
+        for idx, header in enumerate(expected):
+            if idx >= len(actual):
+                ws.cell(row=1, column=idx + 1, value=header)
+            elif actual[idx] != header:
+                ws.cell(row=1, column=idx + 1, value=header)
+        return
+
+    raise RuntimeError(
+        f"sheet header mismatch for {sheet_name}; expected {expected}, found {actual}"
+    )
 
 
 def list_sheets(path: Path | None = None) -> list[str]:
@@ -309,9 +396,9 @@ def _normalize_row_for_write(sheet_name: str, row: dict[str, Any]) -> dict[str, 
     return output
 
 
-def append_row(sheet_name, row_dict):
+def append_row(sheet_name, row_dict, path: Path | None = None):
     _require_sheet(sheet_name)
-    wb = safe_load_workbook()
+    wb, ledger = _open_ledger(path)
     ws = wb[sheet_name]
     _validate_headers(ws, sheet_name)
 
@@ -320,12 +407,12 @@ def append_row(sheet_name, row_dict):
     row = [normalized.get(h, "") for h in headers]
 
     ws.append(row)
-    wb.save(LEDGER_PATH)
+    wb.save(ledger)
 
 
-def update_row(sheet_name, key_column, key_value, updates):
+def update_row(sheet_name, key_column, key_value, updates, path: Path | None = None):
     _require_sheet(sheet_name)
-    wb = safe_load_workbook()
+    wb, ledger = _open_ledger(path)
     ws = wb[sheet_name]
     _validate_headers(ws, sheet_name)
 
@@ -352,21 +439,25 @@ def update_row(sheet_name, key_column, key_value, updates):
     for i, header in enumerate(headers, start=1):
         ws.cell(row=match_row_index, column=i, value=normalized.get(header, ""))
 
-    wb.save(LEDGER_PATH)
+    wb.save(ledger)
     return normalized
 
 
-def log_operator_action(operator, notebook, action, target, status="ok", notes=""):
-    append_row("OPERATOR_LOG", {
-        "log_id": f"log-{timestamp()}",
-        "timestamp": timestamp(),
-        "operator": operator,
-        "notebook": notebook,
-        "action": action,
-        "target": target,
-        "status": status,
-        "notes": notes
-    })
+def log_operator_action(operator, notebook, action, target, status="ok", notes="", path: Path | None = None):
+    append_row(
+        "OPERATOR_LOG",
+        {
+            "log_id": f"log-{timestamp()}",
+            "timestamp": timestamp(),
+            "operator": operator,
+            "notebook": notebook,
+            "action": action,
+            "target": target,
+            "status": status,
+            "notes": notes,
+        },
+        path=path,
+    )
 
 
 def replace_sheet_rows(

@@ -1,0 +1,39 @@
+{
+  "validator": "dpo_csf_preflight",
+  "version": 1,
+  "seed_path": "dpo_system\\config\\outbound_batches\\live\\csf_live_001_of_012.csv",
+  "generated_at": "2026-08-05T19:20:31Z",
+  "expected_rows": 500,
+  "actual_rows": 500,
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "required_headers_present",
+      "passed": true,
+      "missing_headers": []
+    },
+    {
+      "name": "no_unknown_headers",
+      "passed": true,
+      "unknown_headers": []
+    },
+    {
+      "name": "row_count_matches_expected",
+      "passed": true,
+      "expected_rows": 500,
+      "actual_rows": 500
+    },
+    {
+      "name": "rows_valid",
+      "passed": true
+    }
+  ],
+  "input_digest_sha256": "edb527412d72dbdbc37b680932280af60e5ce29455a97a168c9eee968caccf0b",
+  "summary": {
+    "error_count": 0,
+    "warning_count": 0,
+    "unique_record_ids": 500
+  }
+}
