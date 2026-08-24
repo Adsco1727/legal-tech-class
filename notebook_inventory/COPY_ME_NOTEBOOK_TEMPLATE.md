@@ -6,7 +6,7 @@ Use this as the working starter for any future notebook.
 
 The approved source template is:
 
-- [NOTEBOOK_TEMPLATE_STANDARD.ipynb](../NOTEBOOK_TEMPLATE_STANDARD.ipynb)
+- NOTEBOOK_TEMPLATE_STANDARD.ipynb
 
 ## Copy instruction
 

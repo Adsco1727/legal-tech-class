@@ -4,7 +4,7 @@
 
 The canonical notebook starter for all future DPO notebook work is:
 
-- [NOTEBOOK_TEMPLATE_STANDARD.ipynb](../NOTEBOOK_TEMPLATE_STANDARD.ipynb)
+- NOTEBOOK_TEMPLATE_STANDARD.ipynb
 
 This file is the source of truth. All future notebook work should be created by copying this template or by copying the structure documented here.
 
@@ -18,7 +18,7 @@ This file is the source of truth. All future notebook work should be created by 
 
 Use the companion file in this folder as the copy-ready starter:
 
-- [COPY_ME_NOTEBOOK_TEMPLATE.md](COPY_ME_NOTEBOOK_TEMPLATE.md)
+- COPY_ME_NOTEBOOK_TEMPLATE.md
 
 ## Operational intent
 

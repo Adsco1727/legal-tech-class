@@ -1,100 +1,76 @@
-# Org-Wide Governance Statement
+# Repo Notebook Governance Rule
 
-## Policy
+## Core rule
 
-The operating unit of the organization is the repo. The workflow unit is the notebook. The database is the downstream consumer of validated operational output.
+One repo owns one operational domain.
+Many notebooks may live inside that repo when they serve different workflows in the same domain.
 
-One repo owns one operational domain. Many notebooks may live inside that repo when they serve different workflows in the same domain. A notebook is never treated as a standalone product or a justification for creating a new repo unless it is itself a distinct business domain with independent ownership, controls, and operating lifecycle.
+## Standard structure
 
-## Repo policy
+Each DPO repo must follow this pattern:
 
-Each DPO repository must:
+- one repo per domain or product boundary
+- one canonical notebook template per repo
+- one notebook inventory folder per repo
+- multiple operational notebooks inside the repo as needed
+- no repo creation for a single notebook
+- no notebook creation without using the canonical template
 
-- map to a single domain or operational boundary
-- contain a canonical notebook template
-- contain a notebook inventory registry
-- maintain a clear repo-level ownership model
-- operate as a governed execution environment, not a collection of ad hoc notebooks
+## Why this rule matters
 
-Examples of valid repo ownership:
+This keeps the ecosystem:
 
-- dpo-ledger-tools = ledger and control-plane data
-- dpo-casework = case progression and workflow execution
-- dpo-admin-tools = administration and operational support
-- dpo-integrations = external data connectors and system interfaces
-- dpo-automation-suite = automation and operational orchestration
-- dpo-interview-suite = interview and intake workflows
-- docassemble-dpolawstack = document assembly and output generation
+- governed
+- auditable
+- discoverable
+- consistent
+- reusable
+- aligned with repo ownership and operational scope
 
-## Notebook policy
+## Canonical model
 
-Each notebook must:
+The repo-level pattern is:
 
-- follow the canonical template
-- be stored within its owning repo
-- be listed in the repo notebook inventory
-- be assigned an operational purpose tied to the repo domain
-- be tested before enablement
-- produce evidence before it is allowed to feed data downstream
+- Repo = ownership boundary
+- Notebook = workflow execution
+- Inventory folder = approved notebook registry
+- Template = standard operating pattern
 
-No repo may be created for a single notebook. No notebook may bypass the template and inventory process. No notebook may be treated as production-ready without validation.
+## Required repo naming convention
 
-## Approval flow
+Each repo should keep:
 
-A notebook is approved only through the following sequence:
+- a canonical notebook starter
+- a notebook_inventory folder
+- repo-specific operational notebooks inside the repo
 
-1. Repo readiness check
-   - repo structure is correct
-   - required artifacts exist
-   - canonical template and inventory are in place
+Example:
 
-2. Notebook readiness check
-   - notebook is aligned to the repo domain
-   - dependencies are valid
-   - execution path and outputs are explicit
+- dpo-ledger-tools/
+  - NOTEBOOK_TEMPLATE_STANDARD.ipynb
+  - notebook_inventory/
+  - ledger_production_readiness.ipynb
+  - ledger_audit_review.ipynb
 
-3. Gate validation
-   - required data contracts, schema checks, and operational gates pass
-   - validation fails fast on missing files, bad paths, or invalid vendor artifacts
+## Governance rule
 
-4. Evidence capture
-   - logs, validation output, and artifact proof are recorded
-   - each notebook must preserve evidence of proof, not assumptions
+A notebook is approved only when it:
 
-5. Operator sign-off
-   - a human operator verifies readiness and approves enablement
+- follows the canonical template
+- passes readiness checks
+- passes gate validation
+- records evidence
+- receives operator sign-off
 
-6. Controlled enablement
-   - the notebook is activated in sequence only when its upstream dependencies are confirmed
+## Prohibited pattern
 
-7. Data feed to database
-   - once enabled, the output is passed into the database only under controlled validation and monitoring
-   - no downstream data push occurs without upstream proof and evidence
-
-## Operational doctrine
-
-We are not enabling notebooks in parallel just because they exist. We are enabling them in order, validating each result, and proving that the system can feed the data model before additional notebooks are turned on.
-
-This means the rollout sequence is intentionally disciplined:
-
-- assemble
-- validate
-- harden
-- approve
-- enable
-- feed data to the database
-- continue population
-
-## Prohibited patterns
-
-The organization will not permit:
-
-- one repo per notebook
-- notebooks outside their owning repo boundary
-- production enablement without evidence
-- upstream data feeds without validation gates
-- untracked notebook drift or hidden operational work
+Do not create a new repo for every notebook.
+Do not let notebooks drift outside the repo’s governance boundary.
+Do not treat a notebook as a separate product unless it truly owns a separate product or service.
 
 ## Final principle
 
-The repo defines the domain. The notebook defines the workflow. The validation gate defines the standard. The evidence record defines whether the workflow may operate. The database is the downstream destination for validated operational output, not the place where unproven work is allowed to accumulate.
+The repo defines the domain.
+The notebook defines the workflow.
+The template defines the standard.
+The inventory defines the approved operating set.
