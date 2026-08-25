@@ -1,0 +1,18 @@
+﻿freshness_hours: 24
+
+sources:
+  - name: source_a
+    type: csv_drop
+    raw_dir: data/raw/source_a
+    enabled: true
+
+  - name: source_b
+    type: csv_drop
+    raw_dir: data/raw/source_b
+    enabled: true
+
+curated:
+  output_dir: data/curated
+  datasets:
+    - name: cases
+      path: data/curated/cases.csv

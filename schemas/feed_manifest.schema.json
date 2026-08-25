@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Feed Manifest",
+  "type": "object",
+  "required": ["manifest_version", "generated_at", "freshness_hours", "datasets"],
+  "properties": {
+    "manifest_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "freshness_hours": { "type": "integer", "minimum": 1 },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "rows", "sha256", "source_runs"],
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "rows": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "source_runs": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}
