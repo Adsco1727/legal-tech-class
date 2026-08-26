@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-25T20:46:30Z",
+  "jurisdiction": "us",
+  "matter_type": "employment",
+  "payload_hash": "40829855a05fdaf3dad8eb432a58083c05c414e814b6f96e4a829d614672fc99",
+  "status": "ready_for_approval",
+  "task_id": "doc-20260825204629962245",
+  "template_name": "employment_notice_v1"
+}

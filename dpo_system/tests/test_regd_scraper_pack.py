@@ -4,7 +4,7 @@ import csv
 import json
 from pathlib import Path
 
-from dpo_system.src.regd_scraper_pack import parse_regd_atom, run_regd_scrape
+from dpo_system.src.regd_scraper_pack import parse_regd_atom, run_regd_scrape, seed_regd_feed_to_db
 
 
 ATOM_SAMPLE = """<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -80,3 +80,24 @@ def test_run_regd_scrape_writes_outputs(tmp_path: Path) -> None:
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert payload["records"] == 1
     assert payload["enrichment_csv"] == str(enrichment_csv_path)
+
+
+def test_seed_regd_feed_to_db(tmp_path: Path) -> None:
+    def fake_fetch(url: str, user_agent: str) -> str:
+        if "output=atom" in url:
+            return ATOM_SAMPLE
+        return DETAIL_SAMPLE
+
+    db_path = tmp_path / "sec_regd_dispatch.db"
+    result = seed_regd_feed_to_db(
+        db_path=db_path,
+        output_dir=tmp_path / "sec_feed",
+        user_agent="TestAgent/1.0",
+        max_entries=1,
+        page_size=1,
+        fetcher=fake_fetch,
+    )
+
+    assert result["records_ingested"] == 1
+    assert len(result["lead_keys"]) == 1
+    assert result["source_system"] == "SEC_REGD_RSS"

@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+from dpo_system.src.sqlite_manager import DPODatabaseManager
+
 REGD_ATOM_URL = (
     "https://www.sec.gov/cgi-bin/browse-edgar"
     "?action=getcurrent&type=D&company=&dateb=&owner=include&start={start}&count={count}&output=atom"
@@ -271,3 +273,54 @@ def run_regd_scrape(
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
     return manifest
+
+
+def seed_regd_feed_to_db(
+    db_path: str | Path,
+    output_dir: str | Path,
+    user_agent: str,
+    max_entries: int = 200,
+    page_size: int = 100,
+    fetcher: Callable[[str, str], str] = fetch_text,
+) -> dict[str, Any]:
+    """Scrape the SEC RegD Atom feed and ingest every filing as a standard lead."""
+    manifest = run_regd_scrape(
+        output_dir=output_dir,
+        user_agent=user_agent,
+        max_entries=max_entries,
+        page_size=page_size,
+        fetcher=fetcher,
+    )
+
+    csv_path = Path(manifest["csv"])
+    with csv_path.open("r", encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+
+    if not rows:
+        return {
+            "records_ingested": 0,
+            "lead_keys": [],
+            "source_system": "SEC_REGD_RSS",
+            "manifest": manifest,
+        }
+
+    manager = DPODatabaseManager(str(db_path))
+    lead_keys: list[str] = []
+    for row in rows:
+        lead_key = manager.ingest_lead(
+            lane_type="standard",
+            raw_id=row.get("filing_id") or row.get("accession_number") or row.get("issuer_name") or "SEC-RegD",
+            source_system="SEC_REGD_RSS",
+            entity_name=row.get("issuer_name") or "Unknown SEC Issuer",
+            email=None,
+            phone=None,
+            segment="regd_enrichment",
+        )
+        lead_keys.append(lead_key)
+
+    return {
+        "records_ingested": len(lead_keys),
+        "lead_keys": lead_keys,
+        "source_system": "SEC_REGD_RSS",
+        "manifest": manifest,
+    }

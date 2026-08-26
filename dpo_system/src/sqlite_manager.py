@@ -282,6 +282,19 @@ class DPODatabaseManager:
         if not target:
             raise ValueError("target_system must not be empty")
 
+        with self._get_connection() as conn:
+            existing = conn.execute(
+                """
+                SELECT 1
+                FROM crm_sync_queue
+                WHERE lane_type = ? AND record_id = ? AND lead_key = ? AND target_system = ?
+                LIMIT 1
+                """,
+                (lane, record_id, lead_key, target),
+            ).fetchone()
+        if existing is not None:
+            return
+
         self._require_compliance_gate(lane, record_id, lead_key, target)
 
         with self._get_connection() as conn:
