@@ -1,0 +1,61 @@
+name: SEC Intelligence CI Gate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "dpo_system/src/sec_intelligence.py"
+      - "dpo_system/tests/test_sec_intelligence.py"
+      - "Dockerfile"
+      - "setup.py"
+  pull_request:
+    paths:
+      - "dpo_system/src/sec_intelligence.py"
+      - "dpo_system/tests/test_sec_intelligence.py"
+      - "Dockerfile"
+      - "setup.py"
+
+jobs:
+  sec-intel-gate:
+    name: Build and test SEC Intelligence slice
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build dpo-runtime Docker image
+        run: |
+          docker build --no-cache -t dpo-runtime:py3.11.13 .
+        # Any non-zero exit fails the workflow immediately (no retries)
+
+      - name: Verify Python version
+        run: |
+          docker run --rm dpo-runtime:py3.11.13 python --version 2>&1 | tee python-version.log
+          grep -q "Python 3.11.13" python-version.log || \
+            { echo "ERROR: expected Python 3.11.13"; exit 1; }
+
+      - name: Run SEC Intelligence tests
+        run: |
+          set -o pipefail
+          docker run --rm dpo-runtime:py3.11.13 \
+            python -m pytest -q dpo_system/tests/test_sec_intelligence.py \
+            2>&1 | tee pytest-output.log
+
+      - name: Upload python-version log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-version-log
+          path: python-version.log
+          if-no-files-found: warn
+
+      - name: Upload pytest output log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-output-log
+          path: pytest-output.log
+          if-no-files-found: warn
