@@ -1,2 +1,0 @@
-[console_scripts]
-dpo = dpo_system.cli:main

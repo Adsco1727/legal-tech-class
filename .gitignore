@@ -18,6 +18,7 @@ $out/
 .env.production.local
 __pycache__/
 *.pyc
+*.egg-info/
 docassemble-dpolawstack/
 dpo-ledger-tools/
 dpo-interview-suite/
