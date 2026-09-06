@@ -1,0 +1,49 @@
+name: DPO Boundary Gate
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "dpo_system/src/manifest_orchestrator.py"
+      - "dpo_system/src/sqlite_manager.py"
+      - "dpo_system/src/ooma_adapter.py"
+      - "dpo_system/tests/test_manifest_orchestrator.py"
+      - "dpo_system/tests/test_sqlite_manager.py"
+      - "DTO_Architectural_Doctrine.md"
+      - "dpo_system/GOVERNANCE.md"
+      - "schemas/manifest-0.3.schema.json"
+  push:
+    paths:
+      - "dpo_system/src/manifest_orchestrator.py"
+      - "dpo_system/src/sqlite_manager.py"
+      - "dpo_system/src/ooma_adapter.py"
+      - "dpo_system/tests/test_manifest_orchestrator.py"
+      - "dpo_system/tests/test_sqlite_manager.py"
+      - "DTO_Architectural_Doctrine.md"
+      - "dpo_system/GOVERNANCE.md"
+      - "schemas/manifest-0.3.schema.json"
+
+jobs:
+  boundary-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest pyyaml openpyxl
+
+      - name: Run manifest and SQLite boundary tests
+        run: |
+          python -m pytest -q \
+            dpo_system/tests/test_manifest_orchestrator.py \
+            dpo_system/tests/test_sqlite_manager.py

@@ -1,8 +1,19 @@
+import json
 import sqlite3
 
 import pytest
 
 from dpo_system.src.sqlite_manager import DPODatabaseManager
+
+
+def _auth(tag: str) -> dict:
+    return {
+        "ledger_evidence_ref": f"ledger://{tag}",
+        "authorized_by": "operator:test",
+        "authorization_reason": tag,
+        "hitl_approved": True,
+        "promotion_authorized": True,
+    }
 
 
 def test_database_initializes_expected_tables(tmp_path):
@@ -42,9 +53,10 @@ def test_standard_lead_ingest_and_queue_are_idempotent(tmp_path):
         True,
         "operator:test",
         {"consent_status": 1, "dnc_flag": 0},
+        authorization=_auth("consent_gate"),
     )
-    manager.queue_sync("standard", record_id, "google_contacts", lead_key)
-    manager.queue_sync("standard", record_id, "google_contacts", lead_key)
+    manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
+    manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
 
     row_count = manager.get_pending_sync_rows("standard")
     assert len(row_count) == 1
@@ -66,7 +78,7 @@ def test_queue_requires_compliance_gate(tmp_path):
 
     record_id = manager.get_record_id_for_lead_key("standard", lead_key)
     with pytest.raises(ValueError, match="compliance_gate"):
-        manager.queue_sync("standard", record_id, "google_contacts", lead_key)
+        manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
 
     manager.record_evidence(
         "standard",
@@ -76,8 +88,9 @@ def test_queue_requires_compliance_gate(tmp_path):
         True,
         "operator:alice",
         {"consent_status": 1, "dnc_flag": 0},
+        authorization=_auth("consent_gate"),
     )
-    manager.queue_sync("standard", record_id, "google_contacts", lead_key)
+    manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
 
     pending = manager.get_pending_sync_rows("standard")
     assert pending[0]["target_system"] == "google_contacts"
@@ -106,6 +119,7 @@ def test_rejection_and_evidence_are_recorded(tmp_path):
         "missing_consent",
         "No valid consent captured",
         "bd_platform",
+        authorization=_auth("record_rejection"),
     )
     manager.record_evidence(
         "bd",
@@ -115,9 +129,79 @@ def test_rejection_and_evidence_are_recorded(tmp_path):
         True,
         "operator:alice",
         {"consent_status": 1, "dnc_flag": 0},
+        authorization=_auth("consent_gate"),
     )
 
     rejection = manager.get_rejections("bd", record_id)
     assert rejection[0]["rejection_code"] == "missing_consent"
     evidence = manager.get_evidence("bd", record_id)
     assert evidence[0]["gate_name"] == "consent_gate"
+    payload = json.loads(evidence[0]["evidence_payload"])
+    assert payload["authorization"]["authorized_by"] == "operator:test"
+    assert payload["authorization"]["hitl_approved"] is True
+    assert payload["authorization"]["promotion_authorized"] is True
+
+
+def test_consequential_writes_require_authorization(tmp_path):
+    manager = DPODatabaseManager(str(tmp_path / "dpo_auth.db"))
+
+    lead_key = manager.ingest_lead(
+        "standard",
+        raw_id="seed-auth",
+        source_system="ooma",
+        entity_name="Auth Test Legal",
+        email="auth@example.com",
+        phone="5550109999",
+        segment="estate_planning",
+    )
+    record_id = manager.get_record_id_for_lead_key("standard", lead_key)
+    assert record_id is not None
+
+    with pytest.raises(ValueError, match="authorization context"):
+        manager.record_evidence(
+            "standard",
+            record_id,
+            lead_key,
+            "consent_gate",
+            True,
+            "operator:test",
+            {"consent_status": 1, "dnc_flag": 0},
+        )
+    with pytest.raises(ValueError, match="authorization context"):
+        manager.record_evidence(
+            "standard",
+            record_id,
+            lead_key,
+            "consent_gate",
+            False,
+            "operator:test",
+            {"consent_status": 0, "dnc_flag": 1},
+        )
+
+    manager.record_evidence(
+        "standard",
+        record_id,
+        lead_key,
+        "consent_gate",
+        True,
+        "operator:test",
+        {"consent_status": 1, "dnc_flag": 0},
+        authorization=_auth("consent_gate"),
+    )
+    with pytest.raises(ValueError, match="authorization context"):
+        manager.queue_sync("standard", record_id, "google_contacts", lead_key)
+    manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
+
+    with pytest.raises(ValueError, match="authorization context"):
+        manager.mark_sync_dispatched("standard", record_id, "google_contacts", lead_key)
+    manager.mark_sync_dispatched("standard", record_id, "google_contacts", lead_key, authorization=_auth("dispatch"))
+
+    with pytest.raises(ValueError, match="authorization context"):
+        manager.mark_sync_synced("standard", record_id, "google_contacts", lead_key)
+    manager.mark_sync_synced("standard", record_id, "google_contacts", lead_key, authorization=_auth("synced"))
+
+    with pytest.raises(ValueError, match="requires an existing queued sync row"):
+        manager.mark_sync_dispatched("standard", record_id, "missing_target", lead_key, authorization=_auth("dispatch_missing"))
+
+    with pytest.raises(ValueError, match="requires an existing sync row"):
+        manager.mark_sync_synced("standard", record_id, "missing_target", lead_key, authorization=_auth("synced_missing"))
