@@ -248,7 +248,18 @@ Promotion must be logged with a full metadata payload.
 - Sequence is enforced
 - Reversibility is guaranteed
 - Drift is prohibited
+- Manifest validity is execution-contract evidence, not promotion authority
 
 This is the DTO doctrine.
+
+---
+
+## 11. Release Rule for Expansion
+
+If future versions introduce notebook or processor execution, they must ship behind:
+
+- explicit ledger-evidence checks,
+- explicit HITL/promotion authorization controls,
+- and CI tests proving no implicit promotion path from manifest validity alone.
 
 # End of GOVERNANCE.md

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DPO Manifest v0.3",
+  "description": "Frozen baseline for manifest v0.3. A valid manifest is necessary execution-contract evidence, but never sufficient authorization for promotion or protected-state mutation.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "meta",
+    "execution",
+    "processors",
+    "lanes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_version": {
+      "type": "string",
+      "const": "0.3"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "execution": {
+      "type": "object",
+      "required": ["notebooks"],
+      "additionalProperties": false,
+      "properties": {
+        "notebooks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "path"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "path": { "type": "string", "minLength": 1 },
+              "order": { "type": "integer" },
+              "execution_order": { "type": "integer" },
+              "required": { "type": "boolean" },
+              "requires": { "type": "array", "items": { "type": "string" } },
+              "inputs": { "type": "array", "items": { "type": "string" } },
+              "outputs": { "type": "array", "items": { "type": "string" } },
+              "produces": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "processors": {
+      "type": "object",
+      "required": ["registry"],
+      "additionalProperties": false,
+      "properties": {
+        "registry": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "module", "class"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "module": { "type": "string", "minLength": 1 },
+              "class": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "lanes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["lane_id"],
+        "properties": {
+          "lane_id": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "criteria": { "type": "object", "additionalProperties": true },
+          "response_schema": { "type": "object", "additionalProperties": true }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

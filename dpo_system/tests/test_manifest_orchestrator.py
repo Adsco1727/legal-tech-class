@@ -140,6 +140,31 @@ lanes: []
         load_manifest_bundle(manifest_path)
 
 
+def test_load_manifest_bundle_rejects_non_frozen_manifest_version(tmp_path: Path) -> None:
+    manifest_path = tmp_path / "future_manifest.yaml"
+    manifest_path.write_text(
+        """
+manifest_version: "0.4"
+meta:
+  manifest_id: "future"
+execution:
+  notebooks:
+    - id: "n1"
+      path: "notebooks/n1.ipynb"
+processors:
+  registry:
+    - id: "p1"
+      module: "m"
+      class: "C"
+lanes:
+  - lane_id: "lane"
+""".strip()
+    )
+
+    with pytest.raises(ValueError, match="unsupported manifest_version"):
+        load_manifest_bundle(manifest_path)
+
+
 def test_manifest_orchestrator_routes_and_writes_ledger(tmp_path: Path) -> None:
     manifests_dir = tmp_path / "manifests"
     manifests_dir.mkdir()
@@ -250,3 +275,7 @@ processors:
     events = read_rows("LEDGER_EVENTS", path=ledger_path)
     assert events[0]["item_id"] == "item-001"
     assert events[0]["lane"] == "authority_site"
+    assert read_rows("INGESTION_QUEUE", path=ledger_path) == []
+    assert read_rows("CLAUSE_QUEUE", path=ledger_path) == []
+    assert read_rows("CRM_QUEUE", path=ledger_path) == []
+    assert read_rows("GOVERNANCE_QUEUE", path=ledger_path) == []

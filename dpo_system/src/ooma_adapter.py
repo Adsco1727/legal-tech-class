@@ -4,7 +4,7 @@ import csv
 import os
 from typing import Any
 
-from dpo_system.src.sqlite_manager import DPODatabaseManager
+from dpo_system.src.sqlite_manager import DPODatabaseManager, build_authorization_context
 
 
 def seed_ooma_contacts_to_db(csv_path: str, db_path: str, operator_id: str = "operator:system") -> dict[str, Any]:
@@ -73,6 +73,11 @@ def seed_ooma_contacts_to_db(csv_path: str, db_path: str, operator_id: str = "op
                         "dnc_flag": dnc_flag,
                         "reason": "Passed Ooma pre-screen" if is_valid else "Failed consent/DNC requirements",
                     },
+                    authorization=build_authorization_context(
+                        operator_id=operator_id,
+                        evidence_ref=f"sqlite:compliance:{lead_key}",
+                        reason="compliance_gate_transition",
+                    ),
                 )
 
                 if is_valid:
@@ -82,6 +87,11 @@ def seed_ooma_contacts_to_db(csv_path: str, db_path: str, operator_id: str = "op
                         record_id=record_id,
                         lead_key=lead_key,
                         target_system="ooma_auto_dialer",
+                        authorization=build_authorization_context(
+                            operator_id=operator_id,
+                            evidence_ref=f"sqlite:queue:{lead_key}",
+                            reason="queue_for_ooma_dispatch",
+                        ),
                     )
                     if queued_ok:
                         manifest["queued"] += 1

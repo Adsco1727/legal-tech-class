@@ -51,6 +51,41 @@ Internal rule:
 
 ---
 
+## 3a. Validation Is Not Authorization
+
+Manifest validation authorizes consideration only.
+
+- A valid manifest is execution-contract evidence.
+- A valid manifest is necessary but never sufficient for promotion or protected-state mutation.
+- Routing and lane-evaluation outcomes are advisory until ledger evidence and HITL/promotion controls authorize consequence.
+
+Internal rule:
+
+> Validation authorizes consideration; only ledger evidence plus HITL/promotion controls authorize consequence.
+
+---
+
+## 3b. Consequential State Change Rule
+
+A consequential state change includes:
+
+- queue mutation,
+- promotion or disposition transition,
+- downstream sync dispatch,
+- protected-state mutation in machine adapters.
+
+Every consequential state change must carry:
+
+- corresponding ledger evidence reference,
+- explicit authorization provenance,
+- required HITL/promotion approval markers.
+
+Internal rule:
+
+> No consequential state change without ledger evidence and explicit HITL/promotion authorization.
+
+---
+
 ## 4. Governance: Notebook-Orchestrated Reconciliation
 
 The notebook is the governance and orchestration layer.
@@ -200,5 +235,6 @@ DTO should continue to generate solutions that:
 - treat the notebook as the orchestrator,
 - maintain mirrored operational surfaces,
 - and enforce reconciliation-driven governance.
+- and keep manifest validity separate from promotion authority.
 
 This is the correct architecture for the DPO ecosystem.

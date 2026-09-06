@@ -7,6 +7,8 @@ import yaml
 
 from . import ledger_io as ledger
 
+FROZEN_MANIFEST_BASELINE = "0.3"
+
 
 def _read_yaml(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
@@ -25,6 +27,12 @@ def _validate_manifest_structure(bundle: dict[str, Any], source: str | Path) -> 
         if legacy_keys & set(bundle.keys()):
             return
         raise ValueError(f"invalid manifest: missing manifest_version: {source}")
+    manifest_version = str(bundle.get("manifest_version") or "").strip()
+    if manifest_version != FROZEN_MANIFEST_BASELINE:
+        raise ValueError(
+            "invalid manifest: unsupported manifest_version "
+            f"'{manifest_version}' for frozen baseline {FROZEN_MANIFEST_BASELINE}: {source}"
+        )
 
     if "meta" not in bundle or not isinstance(bundle.get("meta"), dict):
         raise ValueError(f"invalid manifest: missing meta mapping: {source}")

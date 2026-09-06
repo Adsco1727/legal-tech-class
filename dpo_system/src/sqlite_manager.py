@@ -8,6 +8,16 @@ from typing import Any
 DB_PATH = "dispatcher.db"
 
 
+def build_authorization_context(operator_id: str, evidence_ref: str, reason: str) -> dict[str, Any]:
+    return {
+        "ledger_evidence_ref": str(evidence_ref).strip(),
+        "authorized_by": str(operator_id).strip(),
+        "authorization_reason": str(reason).strip(),
+        "hitl_approved": True,
+        "promotion_authorized": True,
+    }
+
+
 class DPODatabaseManager:
     """Production-safe SQLite control layer for DPO lead intake and dispatch.
 
@@ -26,6 +36,13 @@ class DPODatabaseManager:
         "dispatched",
         "synced",
         "rejected",
+    )
+    REQUIRED_AUTH_FIELDS = (
+        "ledger_evidence_ref",
+        "authorized_by",
+        "authorization_reason",
+        "hitl_approved",
+        "promotion_authorized",
     )
 
     def __init__(self, db_path: str = DB_PATH):
@@ -54,6 +71,28 @@ class DPODatabaseManager:
         if payload is None:
             return json.dumps({})
         return json.dumps(payload, ensure_ascii=False, sort_keys=True)
+
+    def _require_consequential_authorization(
+        self, authorization: dict[str, Any] | None, action_name: str
+    ) -> dict[str, Any]:
+        if not isinstance(authorization, dict):
+            raise ValueError(f"{action_name} requires authorization context")
+        missing = [field for field in self.REQUIRED_AUTH_FIELDS if field not in authorization]
+        if missing:
+            raise ValueError(f"{action_name} missing authorization fields: {', '.join(missing)}")
+        normalized: dict[str, Any] = {}
+        for field in ("ledger_evidence_ref", "authorized_by", "authorization_reason"):
+            value = str(authorization.get(field) or "").strip()
+            if not value:
+                raise ValueError(f"{action_name} authorization field '{field}' must be non-empty")
+            normalized[field] = value
+        if authorization.get("hitl_approved") is not True:
+            raise ValueError(f"{action_name} requires hitl_approved=True")
+        if authorization.get("promotion_authorized") is not True:
+            raise ValueError(f"{action_name} requires promotion_authorized=True")
+        normalized["hitl_approved"] = True
+        normalized["promotion_authorized"] = True
+        return normalized
 
     def _initialize_database(self) -> None:
         schema_script = """
@@ -256,7 +295,16 @@ class DPODatabaseManager:
             )
             conn.commit()
 
-    def update_lead_state(self, lane_type: str, record_id: int, lead_key: str, next_state: str) -> None:
+    def update_lead_state(
+        self,
+        lane_type: str,
+        record_id: int,
+        lead_key: str,
+        next_state: str,
+        authorization: dict[str, Any] | None = None,
+    ) -> None:
+        """Set lead state only with explicit consequential authorization context."""
+        self._require_consequential_authorization(authorization, "update_lead_state")
         self._update_record_state(lane_type, record_id, lead_key, next_state)
 
     def _require_compliance_gate(self, lane_type: str, record_id: int, lead_key: str, target_system: str) -> None:
@@ -276,11 +324,20 @@ class DPODatabaseManager:
                 f"Current state: '{row['state']}'."
             )
 
-    def queue_sync(self, lane_type: str, record_id: int, target_system: str, lead_key: str) -> None:
+    def queue_sync(
+        self,
+        lane_type: str,
+        record_id: int,
+        target_system: str,
+        lead_key: str,
+        authorization: dict[str, Any] | None = None,
+    ) -> None:
+        """Queue downstream sync only with ledger evidence + HITL/promotion authorization."""
         lane = self._validate_lane(lane_type)
         target = str(target_system or "").strip()
         if not target:
             raise ValueError("target_system must not be empty")
+        self._require_consequential_authorization(authorization, "queue_sync")
 
         with self._get_connection() as conn:
             existing = conn.execute(
@@ -327,12 +384,19 @@ class DPODatabaseManager:
 
         return row["consent_status"] == 1 and row["dnc_flag"] == 0 and row["state"] == "compliance_gate"
 
-    def enqueue_for_sync(self, lane_type: str, record_id: int, lead_key: str, target_system: str) -> bool:
-        """Queue a lead only after the hard compliance preflight passes."""
+    def enqueue_for_sync(
+        self,
+        lane_type: str,
+        record_id: int,
+        lead_key: str,
+        target_system: str,
+        authorization: dict[str, Any] | None = None,
+    ) -> bool:
+        """Queue a lead only after compliance preflight and authorization requirements pass."""
         if not self.validate_dispatch_preflight(lane_type, record_id):
             return False
 
-        self.queue_sync(lane_type, record_id, target_system, lead_key)
+        self.queue_sync(lane_type, record_id, target_system, lead_key, authorization=authorization)
         return True
 
     def get_pending_sync_rows(self, lane_type: str) -> list[dict[str, Any]]:
@@ -344,24 +408,54 @@ class DPODatabaseManager:
             ).fetchall()
             return [dict(row) for row in rows]
 
-    def mark_sync_dispatched(self, lane_type: str, record_id: int, target_system: str, lead_key: str) -> None:
+    def mark_sync_dispatched(
+        self,
+        lane_type: str,
+        record_id: int,
+        target_system: str,
+        lead_key: str,
+        authorization: dict[str, Any] | None = None,
+    ) -> None:
+        """Mark a queued sync row dispatched and only then advance lead state."""
+        self._require_consequential_authorization(authorization, "mark_sync_dispatched")
         lane = self._validate_lane(lane_type)
         with self._get_connection() as conn:
-            conn.execute(
-                "UPDATE crm_sync_queue SET sync_status = 'dispatched', synced_at = NULL WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ?",
+            cursor = conn.execute(
+                "UPDATE crm_sync_queue SET sync_status = 'dispatched', synced_at = NULL "
+                "WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ? AND sync_status = 'queued'",
                 (lane, record_id, target_system, lead_key),
             )
             conn.commit()
+        if cursor.rowcount <= 0:
+            raise ValueError(
+                "mark_sync_dispatched requires an existing queued sync row "
+                f"for lane={lane}, record_id={record_id}, target_system={target_system}, lead_key={lead_key}"
+            )
         self._update_record_state(lane, record_id, lead_key, "dispatched")
 
-    def mark_sync_synced(self, lane_type: str, record_id: int, target_system: str, lead_key: str) -> None:
+    def mark_sync_synced(
+        self,
+        lane_type: str,
+        record_id: int,
+        target_system: str,
+        lead_key: str,
+        authorization: dict[str, Any] | None = None,
+    ) -> None:
+        """Mark a queued/dispatched sync row synced and only then advance lead state."""
+        self._require_consequential_authorization(authorization, "mark_sync_synced")
         lane = self._validate_lane(lane_type)
         with self._get_connection() as conn:
-            conn.execute(
-                "UPDATE crm_sync_queue SET sync_status = 'synced', synced_at = CURRENT_TIMESTAMP WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ?",
+            cursor = conn.execute(
+                "UPDATE crm_sync_queue SET sync_status = 'synced', synced_at = CURRENT_TIMESTAMP "
+                "WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ? AND sync_status = 'dispatched'",
                 (lane, record_id, target_system, lead_key),
             )
             conn.commit()
+        if cursor.rowcount <= 0:
+            raise ValueError(
+                "mark_sync_synced requires an existing sync row "
+                f"for lane={lane}, record_id={record_id}, target_system={target_system}, lead_key={lead_key}"
+            )
         self._update_record_state(lane, record_id, lead_key, "synced")
 
     def record_evidence(
@@ -373,8 +467,15 @@ class DPODatabaseManager:
         validation_passed: bool,
         operator_signoff: str,
         evidence_payload: dict[str, Any],
+        authorization: dict[str, Any] | None = None,
     ) -> None:
+        """Record evidence with explicit authorization provenance for all writes."""
         lane = self._validate_lane(lane_type)
+        normalized_auth = self._require_consequential_authorization(authorization, "record_evidence")
+        canonical_payload = {
+            "evidence": evidence_payload or {},
+            "authorization": normalized_auth,
+        }
         with self._get_connection() as conn:
             conn.execute(
                 """
@@ -390,7 +491,7 @@ class DPODatabaseManager:
                     str(gate_name),
                     1 if validation_passed else 0,
                     str(operator_signoff),
-                    self._serialize_payload(evidence_payload),
+                    self._serialize_payload(canonical_payload),
                 ),
             )
             conn.commit()
@@ -407,6 +508,7 @@ class DPODatabaseManager:
         passed: bool,
         operator: str,
         payload: dict[str, Any],
+        authorization: dict[str, Any] | None = None,
     ) -> None:
         """Compatibility wrapper for compliance evidence ingestion."""
         self.record_evidence(
@@ -417,6 +519,7 @@ class DPODatabaseManager:
             passed,
             operator,
             payload,
+            authorization=authorization,
         )
 
     def get_evidence(self, lane_type: str, record_id: int) -> list[dict[str, Any]]:
@@ -436,7 +539,10 @@ class DPODatabaseManager:
         rejection_code: str,
         rejection_reason: str,
         source_system: str,
+        authorization: dict[str, Any] | None = None,
     ) -> None:
+        """Record rejection and mutate state only with explicit authorization context."""
+        self._require_consequential_authorization(authorization, "record_rejection")
         lane = self._validate_lane(lane_type)
         with self._get_connection() as conn:
             conn.execute(
