@@ -205,3 +205,43 @@ def test_consequential_writes_require_authorization(tmp_path):
 
     with pytest.raises(ValueError, match="requires an existing sync row"):
         manager.mark_sync_synced("standard", record_id, "missing_target", lead_key, authorization=_auth("synced_missing"))
+
+
+def test_mark_sync_methods_normalize_target_system_whitespace(tmp_path):
+    manager = DPODatabaseManager(str(tmp_path / "dpo_target_normalization.db"))
+
+    lead_key = manager.ingest_lead(
+        "standard",
+        raw_id="seed-whitespace",
+        source_system="ooma",
+        entity_name="Whitespace Test Legal",
+        email="whitespace@example.com",
+        phone="5550101111",
+        segment="estate_planning",
+    )
+    record_id = manager.get_record_id_for_lead_key("standard", lead_key)
+    assert record_id is not None
+
+    manager.record_evidence(
+        "standard",
+        record_id,
+        lead_key,
+        "consent_gate",
+        True,
+        "operator:test",
+        {"consent_status": 1, "dnc_flag": 0},
+        authorization=_auth("consent_gate"),
+    )
+    manager.queue_sync("standard", record_id, "google_contacts", lead_key, authorization=_auth("queue_sync"))
+
+    manager.mark_sync_dispatched("standard", record_id, "  google_contacts  ", lead_key, authorization=_auth("dispatch"))
+    manager.mark_sync_synced("standard", record_id, "\tgoogle_contacts\n", lead_key, authorization=_auth("synced"))
+
+    with sqlite3.connect(tmp_path / "dpo_target_normalization.db") as conn:
+        row = conn.execute(
+            "SELECT sync_status FROM crm_sync_queue WHERE lane_type = ? AND record_id = ? AND target_system = ?",
+            ("standard", record_id, "google_contacts"),
+        ).fetchone()
+
+    assert row is not None
+    assert row[0] == "synced"

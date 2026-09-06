@@ -419,17 +419,19 @@ class DPODatabaseManager:
         """Mark a queued sync row dispatched and only then advance lead state."""
         self._require_consequential_authorization(authorization, "mark_sync_dispatched")
         lane = self._validate_lane(lane_type)
+        target = str(target_system or "").strip()
         with self._get_connection() as conn:
             cursor = conn.execute(
                 "UPDATE crm_sync_queue SET sync_status = 'dispatched', synced_at = NULL "
                 "WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ? AND sync_status = 'queued'",
-                (lane, record_id, target_system, lead_key),
+                (lane, record_id, target, lead_key),
             )
+            affected_rows = cursor.rowcount
             conn.commit()
-        if cursor.rowcount <= 0:
+        if affected_rows <= 0:
             raise ValueError(
                 "mark_sync_dispatched requires an existing queued sync row "
-                f"for lane={lane}, record_id={record_id}, target_system={target_system}, lead_key={lead_key}"
+                f"for lane={lane}, record_id={record_id}, target_system={target}, lead_key={lead_key}"
             )
         self._update_record_state(lane, record_id, lead_key, "dispatched")
 
@@ -444,17 +446,19 @@ class DPODatabaseManager:
         """Mark a queued/dispatched sync row synced and only then advance lead state."""
         self._require_consequential_authorization(authorization, "mark_sync_synced")
         lane = self._validate_lane(lane_type)
+        target = str(target_system or "").strip()
         with self._get_connection() as conn:
             cursor = conn.execute(
                 "UPDATE crm_sync_queue SET sync_status = 'synced', synced_at = CURRENT_TIMESTAMP "
                 "WHERE lane_type = ? AND record_id = ? AND target_system = ? AND lead_key = ? AND sync_status = 'dispatched'",
-                (lane, record_id, target_system, lead_key),
+                (lane, record_id, target, lead_key),
             )
+            affected_rows = cursor.rowcount
             conn.commit()
-        if cursor.rowcount <= 0:
+        if affected_rows <= 0:
             raise ValueError(
                 "mark_sync_synced requires an existing sync row "
-                f"for lane={lane}, record_id={record_id}, target_system={target_system}, lead_key={lead_key}"
+                f"for lane={lane}, record_id={record_id}, target_system={target}, lead_key={lead_key}"
             )
         self._update_record_state(lane, record_id, lead_key, "synced")
 
